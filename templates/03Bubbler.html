@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>3_Bubbler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+
+
+  <!-- <link rel="stylesheet" type="text/css" media="screen" href="style.css" /> -->
+  <style>
+    /* remove default margin and padding from body */
+body {
+padding: 0;
+margin: 0;
+}
+
+/* set map, body, and html to 100% of the screen size */
+
+#map-container {
+position: relative;
+height: 500px;
+width: 700px;
+}
+
+#map {
+position: relative;
+height: inherit;
+width: inherit;
+}
+
+h1 {
+text-align: center;
+}
+/* navbar-START*/
+.navbar a {
+color: rgb(30, 255, 0);
+font-size: 16px;
+font-family: monospace
+}
+
+a.nav-link.disabled {
+color: #9800f0;
+font-size: 20px;
+font-family: 'Courier New', Courier, monospace
+}
+
+a.nav-link.active {
+color: #15ff00;
+font-size: 22px;
+font-style: italic;
+}
+
+/* navbar-END */
+
+.container {
+padding: 4px;
+border: 1.75px dashed #9800f0
+}
+
+.row {
+padding: 10px;
+}
+
+html {
+position: relative;
+min-height: 100%;
+}
+
+body {
+/* Padding bottom by footer height */
+padding-bottom: 10px;
+padding-top: 10px;
+padding-left: 2px;
+padding-right: 2px;
+}
+}
+  </style>
+  <!-- Our JS -->
+  <script>
+
+  </script>
+
+  <!-- Leaflet CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"></script>
+  <script>
+    // Create a map object
+    var myMap = L.map("map", {
+      center: [37.09, -95.71],
+      zoom: 5
+    });
+
+    L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+      attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap </a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA < /
+      a > ,
+      Imagery© < a href = \"https:/ / www.mapbox.com / \">Mapbox </a>",
+      maxZoom: 18,
+      id: "mapbox.streets-basic",
+      accessToken: API_KEY
+    }).addTo(myMap); // Define a markerSize function that will give each city a different radius
+    based on its salary
+
+    function markerSize(salaryEstimated) {
+      return salaryEstimated;
+    } // Each city object contains the
+    city 's name, location and salaryEstimated var cities=[{ name: "New York" , location: [40.7128, -74.0059],
+    salaryEstimated: 118139
+    }, {
+      name: "Chicago",
+      location: [41.8781, -87.6298],
+      salaryEstimated: 105602
+    }, {
+      name: "Houston",
+      location: [29.7604, -95.3698],
+      salaryEstimated: 97884
+    }, {
+      name: "Los Angeles",
+      location: [34.0522,
+        -118.2437
+      ],
+      salaryEstimated: 122674
+    }, {
+      name: "Omaha",
+      location: [41.2524, -95.9980],
+      salaryEstimated: 89107
+    }];
+    // Loop through the cities array and create one marker for each city object for (var i=0; i < cities.length; i++) {
+    L.circle(cities[i].location, {
+      fillOpacity: 0.75,
+      color: "white",
+      fillColor: "purple", // Setting our circle's
+      radius equal to the output of our markerSize
+
+      function // This will make our marker's size proportionate to its
+      salaryEstimated radius: markerSize(cities[i].salaryEstimated)
+    }).bindPopup("<h4>" + cities[i].name + "</h4> <
+      hr >
+      <
+      h6 > salaryEstimated: " + 0.001 * cities[i].salaryEstimated + " < /h6>").addTo(myMap);
+    }
+
+  </script>
+</head>
+
+<body>
+  <!-----------00 NAV BAR ICON TOTAL TWO BARS STACKED--  -->
+  <nav class="navbar navbar-dark" style="background-color: #560088;">
+    <a class="navbar-brand" href="#">
+      <img src="https://raw.githubusercontent.com/attila5287/DU_Coding_PR02_JobVizzy_flask_python_MongoDB_JavaScript_Plotly_BeautifulSoup/master/assets/img/favicon.ico"
+        width="30" height="30" class="d-inline-block align-top" alt="">
+      JobVizzY
+    </a>
+
+    <a class="nav-link" href="#">00.Welcome</a>
+    <a class="nav-link" href="#">0.UserProfiler</a>
+    <a class="nav-link active" href="#">1.WebScraper</a>
+    <a class="nav-link" href="#">2.Lister</a>
+    <a class="nav-link" href="#">3.Bubbler</a>
+    </a>
+  </nav>
+  <!-- -----------------FIRST main navbar ends------------>
+  <ul class="nav justify-content-center" style="background-color: #bb7dee">
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#">PR02:Full-Stack Web Framework ATTILA|OMER|OSAME</a>
+    </li>
+  </ul>
+  <br>
+  <!-- second navbar only for decoration -->
+  <!--------------------  SECOND navbar_End---------------->
+
+
+  <!--------------- 0 LOGO W/O WELCOME ---------- -->
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+
+        <div class="container">
+          <div class="d-flex justify-content-center" style="background-color: #ffffff">
+            <img src="https://raw.githubusercontent.com/attila5287/DU_Coding_PR02_JobVizzy_flask_python_MongoDB_JavaScript_Plotly_BeautifulSoup/master/assets/img/jobVizzyLogoFinal_small.png"
+              class="img-circle">
+          </div>
+        </div>
+      </div>
+      <!-- LOGO END -->
+
+
+      <!-- -------------intro table STARTS----------- -->
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="row">JobVizzy, a mobile-friendly web app by
+              three coding bootcamp students:Attila Turkoz, Omer Kurban and Osame Ben Ismael. </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Module creates an interactive chart summarizing web data scraped per user selection </td>
+          </tr>
+          <tr>
+            <td>tooltip I/A charts and leaflet JS for geomapping</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div><br>
+  <!-- ---------------END OF WELCOME MSG LOGO---- -->
+  <br>
+  <div class="container">
+    <i>user jobList</i>
+    <br>
+    <div class="row">
+      {% for job in jobList %}
+      <div class="col-md-4">
+        <div class="alert alert-danger" role="alert" align="center">
+          {{ job }}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div><br>
+
+
+  {% for job in jobList %}
+  <i>{{ job }}</i>
+  <div class="container">
+    <div class="row">
+      <!-- map first box from left -->
+      <div class="col-xs-7  col-md-7">
+        <div id="map-container" style="position: relative;
+height: 500px; width: 700px;">
+          <div id="map" style="position: relative;
+                              height: inherit;
+                              width: inherit;
+"></div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-4">
+        {% for city in cityList %}
+        <div class="alert alert-secondary" role="alert" align="center">
+          {{ city }}
+        </div>
+        {% endfor %}
+      </div><br>
+
+    </div>
+  </div><br>
+  <br>
+  {% endfor %}
+
+
+  <div class="container">
+    <i>user cityList</i>
+    <div class="row">
+      {% for city in cityList %}
+      <div class="col-md-3">
+        <div class="alert alert-secondary" role="alert" align="center">
+          {{ city }}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div><br>
+  <div class="container">
+    <i>
+      demo for Live Server (client side test)
+    </i>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="alert alert-danger" role="alert" align="center">
+          denver
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="alert alert-danger" role="alert" align="center">
+          seattle
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="alert alert-danger" role="alert" align="center">
+          orlando
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="alert alert-danger" role="alert" align="center">
+          chicago
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3">
+        <div class="alert alert-secondary" role="alert" align="center">
+          front end developer
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="alert alert-secondary" role="alert" align="center">
+          full stack developer
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="alert alert-secondary" role="alert" align="center">
+          web developer
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="alert alert-secondary" role="alert" align="center">
+          software developer
+        </div>
+      </div>
+    </div>
+  </div><br>
+
+  <!-- mod intro -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="alert alert-danger" role="alert" align="center">
+          <b>* * * FOURTH MODULE: BUBBLER* * * </b>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- first box from left -->
+      <div class="col-sm-6">
+        <li class="list-group-item list-group-item-danger">
+          <h4>Data Visualization</h4>
+        </li>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 90%" aria-valuenow="25"
+            aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <ul style="list-style-type:circle">
+              <li>
+                Gathers overall info for the selection
+                parameters
+              </li>
+              <li>
+                Displays bubble chart with scraped values
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            Scrapes indeed salaries page to obtain average
+            salary for the specific city-job title pair
+          </li>
+          <li class="list-group-item">
+            Leaflet support for geo-map
+          </li>
+          <li class="list-group-item">
+            Tooltip on interactive chart
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <br>
+  <!-- API key and MAP JS -->
+
+  <!-- js for bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    const API_KEY = "pk.eyJ1Ijoia3VsaW5pIiwiYSI6ImNpeWN6bjJ0NjAwcGYzMnJzOWdoNXNqbnEifQ.jEzGgLAwQnZCv9rA6UTfxQ";
+
+  </script>
+  <script type="text/javascript">
+    {
+      // Create a map object
+      var myMap = L.map("map", {
+        center: [37.09, -95.71],
+        zoom: 5
+      });
+
+      L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+        attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+        maxZoom: 18,
+        id: "mapbox.streets-basic",
+        accessToken: API_KEY
+      }).addTo(myMap);
+
+      // Define a markerSize function that will give each city a different radius based on its salary
+      function markerSize(salaryEstimated) {
+        return salaryEstimated;
+      }
+
+      // Each city object contains the city's name, location and salaryEstimated
+      var cities = [{
+          name: "New York",
+          location: [40.7128, -74.0059],
+          salaryEstimated: 118139
+        },
+        {
+          name: "Chicago",
+          location: [41.8781, -87.6298],
+          salaryEstimated: 105602
+        },
+        {
+          name: "Houston",
+          location: [29.7604, -95.3698],
+          salaryEstimated: 97884
+        },
+        {
+          name: "Los Angeles",
+          location: [34.0522, -118.2437],
+          salaryEstimated: 122674
+        },
+        {
+          name: "Omaha",
+          location: [41.2524, -95.9980],
+          salaryEstimated: 89107
+        }
+      ];
+
+      // Loop through the cities array and create one marker for each city object
+      for (var i = 0; i < cities.length; i++) {
+        L.circle(cities[i].location, {
+          fillOpacity: 0.75,
+          color: "white",
+          fillColor: "purple",
+          // Setting our circle's radius equal to the output of our markerSize function
+          // This will make our marker's size proportionate to its salaryEstimated
+          radius: markerSize(cities[i].salaryEstimated)
+        }).bindPopup("<h4>" + cities[i].name + "</h4> <hr> <h4>salaryEstimated: " + 0.001 * cities[i].salaryEstimated +
+          "</h4>").addTo(myMap);
+      }
+    }
+
+  </script>
+</body>
+
+</html>

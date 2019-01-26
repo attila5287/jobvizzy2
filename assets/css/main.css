@@ -1,0 +1,42 @@
+/* navbar-START*/
+.navbar a {
+  color: rgb(30, 255, 0);
+  font-size: 16px;
+  font-family: monospace
+}
+
+a.nav-link.disabled {
+  color: #9800f0;
+  font-size: 20px;
+  font-family: 'Courier New', Courier, monospace
+}
+
+a.nav-link.active {
+  color: #15ff00;
+  font-size: 22px;
+  font-style: italic;
+}
+
+/* navbar-END */
+
+.container {
+  padding: 4px;
+  border: 1.75px dashed #9800f0
+}
+
+.row {
+  padding: 10px;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Padding bottom by footer height */
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
