@@ -1,5 +1,3 @@
-import numpy as np
-from splinter import Browser
 import time
 import pandas as pd
 from bs4 import BeautifulSoup
