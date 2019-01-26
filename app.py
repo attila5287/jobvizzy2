@@ -18,14 +18,11 @@ conn = 'mongodb://localhost:27017'
 client = pymongo.MongoClient(conn)
 db = client.jobViz_db
 # Run scraper functions to fill up above db in mongo
-# fulljobVizdata = JobVizzY.scrapListFrameDict(
-#     jobListSampleCut, cityListSampleCut)
-print('')
-# print(len(fulljobVizdata))
-# print('')
+fulljobVizdata = JobVizzY.scrapListFrameDict(
+    userListJobs, userListCities)
 # Insert job listings into mongoDb
-# db.collection.drop()
-# db.collection.insert_many(fulljobVizdata)
+db.collection.drop()
+db.collection.insert_many(fulljobVizdata)
 
 
 @app.route("/")
