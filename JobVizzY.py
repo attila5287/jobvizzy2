@@ -1,5 +1,3 @@
-import tabulate
-from tabulate import tabulate
 import numpy as np
 from splinter import Browser
 import time
