@@ -4,4 +4,5 @@
 	six==1.11.0
 	gunicorn==19.9.0
 	requests==2.20.0
+	pandas==0.23.0
 
