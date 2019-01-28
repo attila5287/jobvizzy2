@@ -7,6 +7,8 @@ import JobVizzY
 from JobVizzY import scrapListFrameDict
 from userInput import jobListSampleCut
 from userInput import cityListSampleCut
+from userInput import userListCities
+from userInput import userListJobs
 
 # create instance of Flask app
 app = Flask(__name__)

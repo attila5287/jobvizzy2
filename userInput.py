@@ -1,3 +1,8 @@
+from flask import Flask
+
+app = Flask(__name__)
+
+
 jobListSampleCut = ['front+end+developer',
                     'back+end+developer',
                     'full+stack+developer'
@@ -20,5 +25,4 @@ userListJobs = ['developer',
 userListCities = ['denver',
                   'Austin',
                   'Orlando'
-
                   ]

@@ -10,7 +10,7 @@
     crossorigin="anonymous">
 
 
-
+  <!-- <link rel="stylesheet" type="text/css" media="screen" href="style.css" /> -->
   <style>
     /* remove default margin and padding from body */
 body {
@@ -151,8 +151,7 @@ padding-right: 2px;
   <!-----------00 NAV BAR ICON TOTAL TWO BARS STACKED--  -->
   <nav class="navbar navbar-dark" style="background-color: #560088;">
     <a class="navbar-brand" href="#">
-      <img src="https://raw.githubusercontent.com/attila5287/DU_Coding_PR02_JobVizzy_flask_python_MongoDB_JavaScript_Plotly_BeautifulSoup/master/assets/img/favicon.ico"
-        width="30" height="30" class="d-inline-block align-top" alt="">
+      <img src="favicon.ico" width="30" height="30" class="d-inline-block align-top" alt="">
       JobVizzY
     </a>
 
@@ -180,8 +179,8 @@ padding-right: 2px;
       <div class="col-12">
 
         <div class="container">
-          <div class="d-flex justify-content-center" style="background-color: #ffffff">
-            <img src="https://raw.githubusercontent.com/attila5287/DU_Coding_PR02_JobVizzy_flask_python_MongoDB_JavaScript_Plotly_BeautifulSoup/master/assets/img/jobVizzyLogoFinal_SmallSimple.png"
+          <div class="d-flex justify-content-center" style="background-color: #bb7dee">
+            <img src="https://raw.githubusercontent.com/attila5287/DU_Coding_PR02_JobVizzy_flask_python_MongoDB_JavaScript_Plotly_BeautifulSoup/master/assets/img/jobVizzyLogoFinal_small.png"
               class="img-circle">
           </div>
         </div>
@@ -209,7 +208,41 @@ padding-right: 2px;
     </div>
   </div><br>
   <!-- ---------------END OF WELCOME MSG LOGO---- -->
+
+
+  <div class="container">
+    <div class="row">
+      <!-- first box from left -->
+      <div class="col-xs-7  col-md-7">
+        <div id="map-container">
+          <div id="map"></div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-4">
+        {% for city in cityList %}
+        <div class="alert alert-secondary" role="alert" align="center">
+          {{ city }}
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div><br>
   <br>
+
+  <div class="container">
+    <i>user cityList</i>
+    <div class="row">
+      {% for city in cityList %}
+      <div class="col-md-4">
+        <div class="alert alert-secondary" role="alert" align="center">
+          {{ city }}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div><br>
   <div class="container">
     <i>user jobList</i>
     <br>
@@ -224,48 +257,6 @@ padding-right: 2px;
     </div>
   </div><br>
 
-
-  {% for job in jobList %}
-  <i>{{ job }}</i>
-  <div class="container">
-    <div class="row">
-      <!-- map first box from left -->
-      <div class="col-xs-7  col-md-7">
-        <div id="map-container" style="position: relative;
-height: 500px; width: 700px;">
-          <div id="map" style="position: relative;
-                              height: inherit;
-                              width: inherit;
-"></div>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-      <div class="col-md-4">
-        {% for city in cityList %}
-        <div class="alert alert-secondary" role="alert" align="center">
-          {{ city }}
-        </div>
-        {% endfor %}
-      </div><br>
-
-    </div>
-  </div><br>
-  <br>
-  {% endfor %}
-
-
-  <div class="container">
-    <i>user cityList</i>
-    <div class="row">
-      {% for city in cityList %}
-      <div class="col-md-3">
-        <div class="alert alert-secondary" role="alert" align="center">
-          {{ city }}
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div><br>
   <div class="container">
     <i>
       demo for Live Server (client side test)

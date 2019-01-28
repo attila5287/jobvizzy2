@@ -8,8 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/main.css" />
-  <script src="main.js"></script>
+
   <style>
     /* navbar-START*/
   .navbar a {
@@ -61,7 +60,8 @@
   <!-----------00 NAV BAR ICON TOTAL TWO BARS STACKED--  -->
   <nav class="navbar navbar-dark" style="background-color: #560088;">
     <a class="navbar-brand" href="#">
-      <img src="favicon.ico" width="30" height="30" class="d-inline-block align-top" alt="">
+      <img src="https://raw.githubusercontent.com/attila5287/DU_Coding_PR02_JobVizzy_flask_python_MongoDB_JavaScript_Plotly_BeautifulSoup/master/assets/img/favicon.ico"
+        width="30" height="30" class="d-inline-block align-top" alt="">
       JobVizzY
     </a>
 
@@ -176,23 +176,52 @@
 
   <!-- Row for CITY -->
   <div class="container">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="alert alert-info" role="alert" align="center">
-            * *JOB TITLES* *</div>
-          <form>
-            <div class="form-group">
-              <label for="formGroupExampleInput">
-                type job titles below...
-              </label>
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="developer">
-            </div>
-            <button id="button1id" name="button1id" class="btn btn-info">add</button>
-            <div class="form-group">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="container">
+          <div class="p-2 mb-2 alert alert-info" id="c01_userListJobs">
+            <h5 aligned="center">userListJobs</h5>
 
-          </form>
+          </div>
         </div>
+      </div>
+      <div class="col-md-8">
+        <button class="btn btn-info" onclick="myFunction()">add to [userListJobs]</button>
+        <script>
+          function myFunction() {
+      var col3 = document.getElementById("c01_userListJobs") 
+      var btn = document.createElement("BUTTON");
+      var t = document.createTextNode("denver");
+      btn.appendChild(t);
+      col3.appendChild(btn);
+    }
+          </script>
+      </div>
+
+    </div>
+
+  </div>
+  <br>
+
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="alert alert-info" role="alert" align="center">
+          * *JOB TITLES* *</div>
+        <form>
+          <div class="form-group">
+            <label for="formGroupExampleInput">
+              type job titles below...
+            </label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="developer">
+          </div>
+          <button id="button1id" name="button1id" class="btn btn-info">add</button>
+          <!-- <div class="form-group"> -->
+
+        </form>
       </div>
       <!-- b multiple selection form -->
       <div class="col-md-4">
@@ -241,8 +270,8 @@
         </ul>
       </div>
     </div>
+    <br>
   </div><br>
-
   <!-- row for city -->
   <div class="container">
     <div class="row">
@@ -255,7 +284,7 @@
             <label for="formGroupExampleInput">
               type city below...
             </label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="developer">
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="denver">
           </div>
           <button id="button1id" name="button1id" class="btn btn-info">add</button>
           <div class="form-group">
