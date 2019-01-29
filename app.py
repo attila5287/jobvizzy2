@@ -3,6 +3,11 @@ from flask import Flask, render_template, redirect
 from flask_pymongo import PyMongo
 from pymongo import MongoClient
 import pymongo
+
+import pandas as pd
+from bs4 import BeautifulSoup
+import requests
+
 import JobVizzY
 from JobVizzY import scrapListFrameDict
 from userInput import jobListSampleCut
