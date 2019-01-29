@@ -14,11 +14,12 @@ from userInput import userListJobs
 app = Flask(__name__)
 
 # Use flask_pymongo to set up mongo connection
-app.config["MONGO_URI"] = "mongodb://localhost:27017/jobViz_app"
 mongo = PyMongo(app)
-conn = 'mongodb://localhost:27017'
+# Use flask_pymongo to set up mongo connection
+app.config["MONGO_URI"] = "mongodb://<dbuser>:<dbpassword>@ds113495.mlab.com:13495/heroku_m3j2ckrz"
+conn = 'mongodb://<dbuser>:<dbpassword>@ds113495.mlab.com:13495/heroku_m3j2ckrz'
 client = pymongo.MongoClient(conn)
-db = client.jobViz_db
+db = client.heroku_m3j2ckrz
 # Run scraper functions to fill up above db in mongo
 fulljobVizdata = JobVizzY.scrapListFrameDict(
     userListJobs, userListCities)
