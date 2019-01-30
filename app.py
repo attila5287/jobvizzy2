@@ -19,18 +19,17 @@ from userInput import userListJobs
 app = Flask(__name__)
 
 # Use flask_pymongo to set up mongo connection
-mongo = PyMongo(app)
+# mongo = PyMongo(app)
 # Use flask_pymongo to set up mongo connection
-app.config["MONGO_URI"] =  'mongodb://heroku_attila5287:jobvizzy1@ds113495.mlab.com:13495/heroku_m3j2ckrz'
-conn = 'mongodb://heroku_attila5287:jobvizzy1@ds113495.mlab.com:13495/heroku_m3j2ckrz'
-client = pymongo.MongoClient(conn)
-db = client.heroku_m3j2ckrz
+# app.config["MONGO_URI"] =  'mongodb://heroku_attila5287:jobvizzy1@ds113495.mlab.com:13495/heroku_m3j2ckrz'
+# conn = 'mongodb://heroku_attila5287:jobvizzy1@ds113495.mlab.com:13495/heroku_m3j2ckrz'
+# client = pymongo.MongoClient(conn)
+# db = client.heroku_m3j2ckrz
 # Run scraper functions to fill up above db in mongo
-fulljobVizdata = JobVizzY.scrapListFrameDict(
-    userListJobs, userListCities)
+# fulljobVizdata = JobVizzY.scrapListFrameDict(userListJobs, userListCities)
 # Insert job listings into mongoDb
-db.collection.drop()
-db.collection.insert_many(fulljobVizdata)
+# db.collection.drop()
+# db.collection.insert_many(fulljobVizdata)
 
 
 @app.route("/")
