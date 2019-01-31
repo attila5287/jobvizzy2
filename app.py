@@ -47,12 +47,12 @@ def listerDemo():
 @app.route("/03/")
 def lister():
     # Create db connection
+    global db
     mongo_uri = 'mongodb://heroku_attila5287:jobvizzy1@ds113495.mlab.com:13495/heroku_m3j2ckrz'
-    
     flask_debug = 'false'
     client = PyMongo(app,mongo_uri)
     # Run scraper functions to fill up above db in mongo
-    fulljobVizdata = JobVizzY.scrapListFrameDict(
+    allData = JobVizzY.scrapListFrameDict(
         userListJobs, userListCities)
     # Insert job listings into mongoDb
     db = client.heroku_m3j2ckrz
