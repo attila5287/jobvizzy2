@@ -18,19 +18,6 @@ from userInput import userListJobs
 # create instance of Flask app
 app = Flask(__name__)
 
-# Use flask_pymongo to set up mongo connection
-# mongo = PyMongo(app)
-# Use flask_pymongo to set up mongo connection
-# app.config["MONGO_URI"] =  'mongodb://heroku_attila5287:jobvizzy1@ds113495.mlab.com:13495/heroku_m3j2ckrz'
-# conn = 'mongodb://heroku_attila5287:jobvizzy1@ds113495.mlab.com:13495/heroku_m3j2ckrz'
-# client = pymongo.MongoClient(conn)
-# db = client.heroku_m3j2ckrz
-# Run scraper functions to fill up above db in mongo
-# fulljobVizdata = JobVizzY.scrapListFrameDict(userListJobs, userListCities)
-# Insert job listings into mongoDb
-# db.collection.drop()
-# db.collection.insert_many(fulljobVizdata)
-
 
 @app.route("/")
 def home():
@@ -59,8 +46,13 @@ def listerDemo():
 
 @app.route("/03/")
 def lister():
-    inventory = list(db.collection.find())
-    # print(inventory)
+    # Create db connection
+    if os.environ.get('MONGODB_URI'):
+        mongo_uri = os.environ['MONGODB_URI']
+        flask_debug = os.environ['FLASK_DEBUG']
+    else:
+        mongo_uri = 'mongodb://heroku_m3j2ckrz:3dnq36e1958luohj93avjj3l8s@ds113495.mlab.com:13495/heroku_m3j2ckrz'
+        flask_debug = 'false'
 
     return render_template("02Lister.html", inventory=inventory, cityListSampleCut=cityListSampleCut)
 
