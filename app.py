@@ -54,6 +54,8 @@ def lister():
         mongo_uri = 'mongodb://heroku_m3j2ckrz:3dnq36e1958luohj93avjj3l8s@ds113495.mlab.com:13495/heroku_m3j2ckrz'
         flask_debug = 'false'
 
+    inventory = list(db.collection.find())
+
     return render_template("02Lister.html", inventory=inventory, cityListSampleCut=cityListSampleCut)
 
 
