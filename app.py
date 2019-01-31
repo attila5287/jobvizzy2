@@ -47,12 +47,8 @@ def listerDemo():
 @app.route("/03/")
 def lister():
     # Create db connection
-    if os.environ.get('MONGODB_URI'):
-        mongo_uri = os.environ['MONGODB_URI']
-        flask_debug = os.environ['FLASK_DEBUG']
-    else:
-        mongo_uri = 'mongodb://heroku_m3j2ckrz:3dnq36e1958luohj93avjj3l8s@ds113495.mlab.com:13495/heroku_m3j2ckrz'
-        flask_debug = 'false'
+    mongo_uri = 'mongodb://heroku_m3j2ckrz:3dnq36e1958luohj93avjj3l8s@ds113495.mlab.com:13495/heroku_m3j2ckrz'
+    flask_debug = 'false'
     mongo = PyMongo(app,mongo_uri)
     db = client.heroku_m3j2ckrz
     # Run scraper functions to fill up above db in mongo
