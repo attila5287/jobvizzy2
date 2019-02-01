@@ -58,8 +58,8 @@ def lister():
     pass
     fulljobVizdata = JobVizzY.scrapListFrameDict(userListJobs, userListCities)
 # Insert job listings into mongoDb
-    db.collection.drop()
-    db.collection.insert_many(fulljobVizdata)
+    mongo.db.collection.drop()
+    mongo.db.collection.insert_many(fulljobVizdata)
     inventory = list(mongo.db.collection.find())
     
     return render_template("02Lister.html", inventory=inventory, cityListSampleCut=cityListSampleCut)
