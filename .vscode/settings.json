@@ -3,5 +3,6 @@
     "python.linting.enabled": true,
     "python.linting.pylamaEnabled": true,
     "python.pythonPath": "C:\\ProgramData\\Anaconda3\\python.exe",
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "editor.fontSize": 18
 }

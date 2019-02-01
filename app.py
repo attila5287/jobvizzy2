@@ -18,6 +18,14 @@ from userInput import userListJobs
 # create instance of Flask app
 app = Flask(__name__)
 
+mongo_uri = 'mongodb://heroku_m3j2ckrz:jobvizzy1@ds113495.mlab.com:13495/heroku_m3j2ckrz'
+app.config['MONGO_URI'] = mongo_uri
+app.config['FLASK_DEBUG'] = flask_debug
+# Create db connection
+mongo = PyMongo(app,uri=mongo_uri)
+# Create a database
+
+
 
 @app.route("/")
 def home():
@@ -29,7 +37,7 @@ def home():
 def user():
 
     return render_template("00Forms.html")
-#
+
 
 
 @app.route("/01/")
@@ -46,21 +54,7 @@ def listerDemo():
 
 @app.route("/03/")
 def lister():
-    # Create db connection
-
-    global db
-    mongo_uri = 'mongodb://heroku_m3j2ckrz:jobvizzy1@ds113495.mlab.com:13495/heroku_m3j2ckrz'
-    flask_debug = 'false'
-    app.config['MONGO_URI'] = mongo_uri
-    app.config['FLASK_DEBUG'] = flask_debug
-    # Create db connection
-    client = MongoClient(mongo_uri)
-
-    # Create a database
-    db = client.heroku_m3j2ckrz
-
-    # Create a collection
-    inventory = list(db.collection.find())
+    inventory = list(mongo.db.collection.find())
 
     return render_template("02Lister.html", inventory=inventory, cityListSampleCut=cityListSampleCut)
 
