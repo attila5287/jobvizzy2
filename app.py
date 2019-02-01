@@ -48,16 +48,15 @@ def listerDemo():
 def lister():
     # Create db connection
     global db
-    mongo_uri = 'mongodb://heroku_attila5287:jobvizzy1@ds113495.mlab.com:13495/heroku_m3j2ckrz'
+    mongo_uri = 'mongodb://heroku_m3j2ckrz:jobvizzy1@ds113495.mlab.com:13495/heroku_m3j2ckrz'
     flask_debug = 'false'
     # Create db connection
-    client = MongoClient('mongodb://<dbuser>:<dbpassword>@ds113495.mlab.com:13495/heroku_m3j2ckrz')
+    client = MongoClient(mongo_uri)
 
     # Create a database
     db = client.heroku_m3j2ckrz
 
     # Create a collection
-    collection = db.dataLocal
     inventory = list(db.collection.find())
 
     return render_template("02Lister.html", inventory=inventory, cityListSampleCut=cityListSampleCut)
