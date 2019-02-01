@@ -20,6 +20,7 @@ app = Flask(__name__)
 
 mongo_uri = 'mongodb://heroku_m3j2ckrz:jobvizzy1@ds113495.mlab.com:13495/heroku_m3j2ckrz'
 app.config['MONGO_URI'] = mongo_uri
+flask_debug=False
 app.config['FLASK_DEBUG'] = flask_debug
 # Create db connection
 mongo = PyMongo(app,uri=mongo_uri)
