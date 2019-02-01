@@ -18,7 +18,7 @@ from userInput import userListJobs
 # create instance of Flask app
 app = Flask(__name__)
 
-mongo_uri = 'mongodb://heroku_m3j2ckrz:defence52@ds113495.mlab.com:13495/heroku_m3j2ckrz'
+mongo_uri = 'mongodb://heroku_attila5287:jobvizzy1@ds113495.mlab.com:13495/heroku_m3j2ckrz'
 app.config['MONGO_URI'] = mongo_uri
 flask_debug=False
 app.config['FLASK_DEBUG'] = flask_debug
