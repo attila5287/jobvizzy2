@@ -13,15 +13,11 @@ def compile_URL(job, city):
     return (base_url + add_1_job + add_precity + add_2_city)
 
 
-# print(compile_URL('developer','denver'))
-
 def bring_soup(url):
     html_source = requests.get(url)
     soup = BeautifulSoup(html_source.content,
                          'html.parser', from_encoding="utf-8")
     return soup
-
-# soup = bring_soup(compile_URL('developer','denver'))
 
 
 def title_column(soup):
@@ -38,8 +34,6 @@ def title_column(soup):
 
     return col_title
 
-# title_column(soup)
-
 
 def location_column(soup):
     col_location = []
@@ -52,8 +46,6 @@ def location_column(soup):
 #             - - -
         col_location.append(location)
     return col_location
-
-# location_column(soup)
 
 
 def company_column(soup):
@@ -68,7 +60,6 @@ def company_column(soup):
         col_company.append(company.strip())
     return col_company
 
-# company_column(soup)
 
 
 def desc_column(soup):
@@ -83,7 +74,6 @@ def desc_column(soup):
         col_desc.append(description.strip())
     return col_desc
 
-# desc_column(soup)
 
 
 def url_column(soup):
@@ -98,7 +88,6 @@ def url_column(soup):
             col_href.append(href)
 
     return list(col_href)
-    #     print('http://www.indeed.com'+href)
 
 
 def frame_indeed(soup):
@@ -119,20 +108,6 @@ def parse_n_frame(url):
                          'Description': desc_column(soup),
                          'URLs': url_column(soup)})
 
-
-# jobListSample = ['data+analyst',
-#                  'web+developer',
-#                  'front+end+developer',
-#                  'full+stack+developer'
-#                  ]
-
-# cityListSample = ['denver',
-#                   'boulder',
-#                   'phoenix',
-#                   'houston',
-#                   'tucson',
-#                   'seattle',
-#                   ]
 
 
 def scrapListFrame(job_list, city_list):
@@ -165,26 +140,3 @@ def scrapListFrameHTML(job_list, city_list):
     # __dictZero__ = __dict__[0]
     return __html__
 
-# jobListSampleCut = ['front+end+developer',
-#                     'back+end+developer',
-#                     'full+stack+developer'
-#                     ]
-
-# cityListSampleCut = ['denver',
-#                      'boulder',
-#                      'phoenix',
-#                      'houston',
-#                      'tucson'
-#                      ]
-
-
-# dictionaryForMongo = scrapListFrameDict(jobListSampleCut, cityListSampleCut)
-# print(type(dictionaryForMongo))
-
-# dataFrameTest = scrapListFrame(jobListSampleCut, cityListSampleCut)
-# # print(tabulate(dataFrameTest), headers='keys', tablefmt='psql')
-# testerA = dataFrameTest.to_dict('records')
-# dict_a = testerA[0]
-# print(type(dict_a))
-# # print(type(testerA)) list
-# # print(dataFrameTest.to_dict('records'))

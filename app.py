@@ -52,12 +52,12 @@ def lister():
     flask_debug = 'false'
     client = PyMongo(app,mongo_uri)
     # Run scraper functions to fill up above db in mongo
-    allData = JobVizzY.scrapListFrameDict(
-        userListJobs, userListCities)
+    # allData = JobVizzY.scrapListFrameDict(
+        # userListJobs, userListCities)
     # Insert job listings into mongoDb
     db = client.heroku_m3j2ckrz
-    db.collection.drop()
-    db.collection.insert_many(fulljobVizdata)
+    # db.collection.drop()
+    # db.collection.insert_many(dataLocal)
 
     inventory = list(db.collection.find())
 
