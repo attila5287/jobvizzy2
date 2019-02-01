@@ -50,15 +50,14 @@ def lister():
     global db
     mongo_uri = 'mongodb://heroku_attila5287:jobvizzy1@ds113495.mlab.com:13495/heroku_m3j2ckrz'
     flask_debug = 'false'
-    client = PyMongo(app,mongo_uri)
-    # Run scraper functions to fill up above db in mongo
-    # allData = JobVizzY.scrapListFrameDict(
-        # userListJobs, userListCities)
-    # Insert job listings into mongoDb
-    db = client.heroku_m3j2ckrz
-    # db.collection.drop()
-    # db.collection.insert_many(dataLocal)
+    # Create db connection
+    client = MongoClient('mongodb://<dbuser>:<dbpassword>@ds113495.mlab.com:13495/heroku_m3j2ckrz')
 
+    # Create a database
+    db = client.heroku_m3j2ckrz
+
+    # Create a collection
+    collection = db.dataLocal
     inventory = list(db.collection.find())
 
     return render_template("02Lister.html", inventory=inventory, cityListSampleCut=cityListSampleCut)
