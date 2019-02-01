@@ -54,8 +54,9 @@ def listerDemo():
 
 @app.route("/03/")
 def lister():
+    pass
     inventory = list(mongo.db.collection.find())
-
+    
     return render_template("02Lister.html", inventory=inventory, cityListSampleCut=cityListSampleCut)
 
 
