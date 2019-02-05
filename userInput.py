@@ -18,9 +18,10 @@ cityListSampleCut = ['denver',
                      ]
 
 userListJobs = ['developer',
-                'data+analyst',
+#                 'data+analyst',
                 'full+stack'
                 ]
 
 userListCities = ['denver',
-                  'boulder']
+                  'boulder'
+                  ]

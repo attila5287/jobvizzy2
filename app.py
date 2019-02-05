@@ -77,7 +77,11 @@ def listerDemo():
 @app.route("/03/")
 def lister():
     pass
-    fulljobVizdata = JobVizzY.scrapListFrameDict(userInputJobs[0], userListCities)
+    fulljobVizdata = JobVizzY.scrapListFrameDict(userInputJobs, userListCities)
+
+    fulljobVizdata = JobVizzY.scrapListFrameDict(
+    userInputJobs, userListCities)
+
 # Insert job listings into mongoDb1
     
     mongo.db.collection.drop()
