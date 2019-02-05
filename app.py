@@ -39,6 +39,12 @@ def home():
 
 
 @app.route("/", methods=["GET", "POST"])
+def forms():
+    pass
+
+    return render_template("00Forms.html", jobDisplayList=userInputJob,cityDisplayList=userInputCity)
+
+
 @app.route("/send/job", methods=["GET", "POST"])
 def sendUserJob():
     pass
@@ -50,6 +56,7 @@ def sendUserJob():
         return render_template("00Forms.html", jobDisplayList=userInputJob,cityDisplayList=userInputCity)
 
     return render_template("00Forms.html")
+
 
 @app.route("/send/city", methods=["GET", "POST"])
 def sendUserCity():
