@@ -59,8 +59,8 @@ def sendUserJob():
 
 @app.route("/user/job")
 def data():
-    print(userInput)
-    return jsonify(userInput)
+    print(userInputJobs)
+    return jsonify(userInputJobs)
 
 @app.route("/01/")
 def scrap():
@@ -85,7 +85,7 @@ def lister():
     mongo.db.collection.insert_many(fulljobVizdata)
     inventory = list(mongo.db.collection.find())
    
-    return render_template("02Lister.html", inventory=inventory, cityListSampleCut=userInput)
+    return render_template("02Lister.html", inventory=inventory)
 
 
 @app.route("/04/")
