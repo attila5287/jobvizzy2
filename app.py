@@ -6,7 +6,6 @@ from flask import (
     jsonify,
     request)
 from flask_pymongo import PyMongo
-from pymongo import MongoClient
 import pymongo
 
 import pandas as pd
@@ -15,10 +14,7 @@ import requests
 
 import JobVizzY
 from JobVizzY import scrapListFrameDict
-from userInput import jobListSampleCut
-from userInput import cityListSampleCut
 from userInput import userListCities
-from userInput import userListJobs
 
 # create instance of Flask app
 app = Flask(__name__)
@@ -31,10 +27,8 @@ app.config['FLASK_DEBUG'] = flask_debug
 mongo = PyMongo(app,uri=mongo_uri)
 
 # Create a list to hold our data
-userInputJobs = []
+userInputJob = []
 userInputCity = []
-userJob = ""
-userCity = ""
 
 
 
@@ -48,20 +42,39 @@ def home():
 @app.route("/send/job", methods=["GET", "POST"])
 def sendUserJob():
     pass
+
     if request.method == "POST":
         userJobForm = request.form["Job"]
+        userInputJob.append(userJobForm)
 
-        userInputJobs.append(userJobForm)
+        return render_template("00Forms.html", jobDisplayList=userInputJob,cityDisplayList=userInputCity)
 
-        return render_template("00Forms.html", jobDisplayList=userInputJobs)
+    return render_template("00Forms.html")
+
+@app.route("/send/city", methods=["GET", "POST"])
+def sendUserCity():
+    pass
+    if request.method == "POST":
+        userCityForm = request.form["City"]
+        userInputCity.append(userCityForm)
+        return render_template("00FormsPre.html", jobDisplayList=userInputJob,cityDisplayList=userInputCity)
 
     return render_template("00Forms.html")
 
 @app.route("/user/job")
-def data():
-    print(userInputJobs)
-    return jsonify(userInputJobs)
+def userDataJob():
+    print(userInputJob)
+    return jsonify(userInputJob)
 
+@app.route("/user/city")
+def userDataCity():
+    print(userInputCity)
+    return jsonify(userInputCity)    
+
+
+
+
+# not much functional
 @app.route("/01/")
 def scrap():
     pass
@@ -72,16 +85,14 @@ def scrap():
 def listerDemo():
 
     return render_template("02ListerDemo.html")
-1
+
 
 @app.route("/03/")
 def lister():
     pass
-    fulljobVizdata = JobVizzY.scrapListFrameDict(userInputJobs, userListCities)
+    fulljobVizdata = JobVizzY.scrapListFrameDict(userInputJob, userInputCity)
 
-    fulljobVizdata = JobVizzY.scrapListFrameDict(
-    userInputJobs, userListCities)
-
+    
 # Insert job listings into mongoDb1
     
     mongo.db.collection.drop()

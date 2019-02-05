@@ -102,6 +102,17 @@
   <!-- Row for CITY -->
   <div class="container">
     <div class="row">
+        <div class="col-md-6">
+          <!-- display user preferences -->
+          <div class="alert alert-info" style="background-color:#bb7dee">
+            <h5 aligned="center">userInputCity</h5>
+            {% for city in cityDisplayList %}
+              <button type="button" class="btn btn-info" >{{ city}}</button>
+            {% endfor %}
+          </div>
+        </div>
+    </div>  
+    <div class="row">
       <div class="col-md-6">
         <!-- display user preferences -->
         <div class="alert alert-info" style="background-color:#bb7dee">
@@ -114,7 +125,8 @@
       <div class="col-md-2">
         <div class="d-flex justify-content-center">
           <button type="reset" class="btn btn-info"><h1>Reset
-            <i class="fa fa-battery-1" aria-hidden="true"></i></h1>
+            <i class="fa fa-battery-4" aria-hidden="true"></i>
+            <i class="fa fa-battery-0" aria-hidden="true"></i></h1>
           </button>
         </div>  
       </div><br>
@@ -122,7 +134,7 @@
         <br>
         <div class="d-flex justify-content-center">
           <a class="page-link" href="/03/">
-            <img display="d-inline-block"         
+            <img display="d-flex"         
                 src="https://raw.githubusercontent.com/attila5287/jobvizzy2_assets/master/logoAllModules/scraper03.png" width="280px"></a> 
           </div>    
           
@@ -132,21 +144,25 @@
   </div>
   </div><br>
 
+
+  <!-- USER INPUT -->
   <div class="container">
     <div class="row">
-      <div class="col-md-4">
-        <form class="form " method="POST" action="/send/job">    
+      <div class="col-md-6">
+        <form class="form1" method="POST" action="/send/job">    
           <label for="inputJob">job title here:</label>
           <input type="text" id="inputJob" name="Job">
-          <input type="submit" value="submit">
+          <input type="submit" value="submit1">
         </form>  
       </div>
-      <div class="col-md-4">
-        col-02
+      <div class="col-md-6">
+        <form class="form2" method="POST" action="/send/city">    
+          <label for="inputCity">city here:</label>
+          <input type="text" id="inputCity" name="City">
+          <input type="submit" value="submit2">
+        </form>  
       </div>
-      <div class="col-md-4">
-        col-03
-      </div><br>
+      <br>
     </div>
   </div>
 
