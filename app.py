@@ -71,7 +71,7 @@ def scrap():
 def listerDemo():
 
     return render_template("02ListerDemo.html")
-
+1
 
 @app.route("/03/")
 def lister():
@@ -84,7 +84,7 @@ def lister():
     mongo.db.collection.insert_many(fulljobVizdata)
     inventory = list(mongo.db.collection.find())
    
-    return render_template("02Lister.html", inventory=inventory, cityListSampleCut=cityListSampleCut)
+    return render_template("02Lister.html", inventory=inventory, cityListSampleCut=userInput)
 
 
 @app.route("/04/")
