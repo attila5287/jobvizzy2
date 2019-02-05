@@ -31,7 +31,8 @@ app.config['FLASK_DEBUG'] = flask_debug
 mongo = PyMongo(app,uri=mongo_uri)
 
 # Create a list to hold our data
-userInput = []
+userInputJobs = []
+userInputCity = []
 userJob = ""
 userCity = ""
 
@@ -50,9 +51,9 @@ def sendUserJob():
     if request.method == "POST":
         userJobForm = request.form["Job"]
 
-        userInput.append(userJobForm)
+        userInputJobs.append(userJobForm)
 
-        return render_template("00Forms.html", jobDisplayList=userInput)
+        return render_template("00Forms.html", jobDisplayList=userInputJobs)
 
     return render_template("00Forms.html")
 
@@ -77,7 +78,7 @@ def listerDemo():
 def lister():
     pass
     fulljobVizdata = JobVizzY.scrapListFrameDict(
-    userListJobs, userListCities)
+    userInputJobs, userListCities)
 # Insert job listings into mongoDb1
     
     mongo.db.collection.drop()
