@@ -23,6 +23,5 @@ userListJobs = ['developer',
                 ]
 
 userListCities = ['denver',
-#                   'Austin',
-                  'Orlando'
-                  ]
+                  'boulder'
+                 ]
