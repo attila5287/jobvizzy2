@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>0_Forms</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+
+  <style>
+    /* navbar-START*/
+  .navbar a {
+    color: rgb(30, 255, 0);
+    font-size: 16px;
+    font-family: monospace
+  }
+
+  a.nav-link.disabled {
+    color: #9800f0;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace
+  }
+
+  a.nav-link.active {
+    color: #15ff00;
+    font-size: 22px;
+    font-style: italic;
+  }
+
+  /* navbar-END */
+
+  .container {
+    padding: 4px;
+    border: 1.75px dashed #9800f0
+  }
+
+  .row {
+    padding: 10px;
+  }
+
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+
+  body {
+    /* Padding bottom by footer height */
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+</style>
+
+</head>
+
+<body>
+  <!-----------00 NAV BAR ICON TOTAL TWO BARS STACKED--  -->
+  <nav class="navbar navbar-dark" style="background-color: #560088;">
+    <a class="navbar-brand" href="#">
+      <img src="https://raw.githubusercontent.com/attila5287/DU_Coding_PR02_JobVizzy_flask_python_MongoDB_JavaScript_Plotly_BeautifulSoup/master/assets/img/favicon.ico"
+        width="30" height="30" class="d-inline-block align-top" alt="">
+             JobVizzY
+    </a>
+
+    <a class="nav-link" href="/">Index</a>
+    <button id="button1id" name="button1id" class="btn btn-info"><a class="nav-link-active" href="/00">0.Profiler</a></button>
+    <a class="nav-link" href="/01/">1.Scraper</a>
+    <a class="nav-link" href="/02/">2.Tabulator</a>
+    <a class="nav-link" href="/03/">2.Croupier</a>
+    <a class="nav-link" href="/04/">3.Bubbler</a>
+    <a class="nav-link" href="/05/">4.Locator</a>
+    </a>
+  </nav>
+  <!-- -----------------FIRST main navbar ends------------>
+  <ul class="nav justify-content-center" style="background-color: #bb7dee">
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#">PR02:Full-Stack Web Framework ATTILA|OMER|OSAME</a>
+    </li>
+  </ul>
+  <br>
+  <!-- second navbar only for decoration -->
+  <!--------------------  SECOND navbar_End---------------->
+
+
+  <!--------------- 0 LOGO W/O WELCOME ---------- -->
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="container">
+          <span class="border">
+            <div class="d-flex justify-content-center" >
+              <img src="https://raw.githubusercontent.com/attila5287/jobvizzy2_assets/master/logoAllModules/pro1.png">
+            </div>
+          </span>
+        </div>
+      </div>
+      <!-- LOGO END -->
+
+
+      <!-- -------------intro table STARTS----------- -->
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="row">Welcome to JobVizzy, a mobile-friendly full stack web development project created as a
+              team
+              project by
+              three coding bootcamp students:Attila Turkoz, Omer Kurban and Osame Ben Ismael. </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>In this module, the app requests user preferences, such as city, state, job titles and min salary to
+              store in a
+              JavaScript file-the infamous cookies! </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+  </div>
+  <!-- ---------------END OF WELCOME MSG LOGO---- -->
+  <!--------------- 1 MOD CONTAINER------------ -->
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="alert alert-info" role="alert" align="center">
+          <b>* * * FIRST MODULE: PROFILER* * * </b>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- first box from left -->
+      <div class="col-sm-6">
+        <li class="list-group-item list-group-item-info">
+          <h4>
+            User Input/Form
+          </h4>
+        </li>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 25%" aria-valuenow="25"
+            aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <ul style="list-style-type:circle">
+              <li>Collect user preferences with a form element</li>
+              <li>Run the next module with job title/city
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            Form element to collect info from user
+          </li>
+          <li class="list-group-item">
+            JavaScript for collecting user preferences
+          </li>
+          <li class="list-group-item">
+            Required for main module
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div><br>
+  <!-- ------------END OF mod 00  ------->
+
+  <!-- FORMS USER INPUT STARTS -->
+
+  <!-- Row for CITY -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="container">
+          <div class="p-2 mb-2 alert alert-info" id="c01_userListJobs">
+            <h5 aligned="center">userListJobs</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <button class="btn btn-info" onclick="myFunction()">add to [userListJobs]</br></button>
+        <script>
+          function myFunction() {
+      var col3 = document.getElementById("c01_userListJobs") 
+      var btn = document.createElement("BUTTON");
+      var t = document.createTextNode("denver");
+      btn.appendChild(t);
+      col3.appendChild(btn);
+    }
+          </script>
+      </div>
+
+    </div>
+
+  </div>
+  <br>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <form class="form " method="POST" action="/send/job">    
+          <label for="inputJob">job title here:</label>
+          <input type="text" id="inputJob" name="Job">
+          <input type="submit" value="submit">
+        </form>  
+      </div>
+      <div class="col-md-4">
+        col-02
+      </div>
+      <div class="col-md-4">
+        col-03
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="alert alert-info" role="alert" align="center">
+          * *JOB TITLES* *</div>
+        <form>
+          <div class="form-group">
+            <label for="formGroupExampleInput">
+              type job titles below...
+            </label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="developer">
+          </div>
+          <button id="button1id" name="button1id" class="btn btn-info">add</button>
+          <!-- <div class="form-group"> -->
+
+        </form>
+      </div>
+      <!-- b multiple selection form -->
+      <div class="col-md-4">
+        <form class="form-vertical">
+          <!-- Select Multiple -->
+          <div class="form-group">
+            <div class="alert alert-info" role="alert" aligned="center">
+              suggestions..</div>
+            <div class="col-md-12">
+              <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple">
+                <option value="01">Coder</option>
+                <option value="02">Developer</option>
+                <option value="03">Programmer</option>
+                <option value="04">Front End</option>
+                <option value="05">Full Stack</option>
+              </select>
+            </div>
+          </div>
+        </form>
+        <!-- Button (Double) -->
+        <div class="form-group">
+          <label>
+            add...
+          </label>
+          <button id="button1id" name="button1id" class="btn btn-info">selected</button>
+          <button id="button1id" name="button1id" class="btn btn-secondary">ALL</button>
+        </div>
+      </div>
+      <!-- c COLUMN SELECTED CITY AND TITLES -->
+      <div class="col-md-4">
+        <div class="alert alert-info" aligned="center">
+          [userListJobs]
+        </div>
+
+        <ul class="list-group">
+
+
+          <li class="list-group-item list-group-item-light">
+            <h4 aligned="center">developer</h4>
+          </li>
+          <li class="list-group-item list-group-item-light">
+            <h4 aligned="center">data analyst</h4>
+          </li>
+          <li class="list-group-item list-group-item-light">
+            <h4 aligned="center">full stack</h4>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <br>
+  </div><br>
+  <!-- row for city -->
+  <div class="container">
+    <div class="row">
+      <!-- a column for manual input -->
+      <div class="col-md-4">
+        <div class="alert alert-info" role="alert" align="center">
+          **CITIES**</div>
+        <form>
+          <div class="form-group">
+            <label for="formGroupExampleInput">
+              type city below...
+            </label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="denver">
+          </div>
+          <button id="button1id" name="button1id" class="btn btn-info">add</button>
+          <div class="form-group">
+
+        </form>
+      </div>
+    </div>
+
+
+    <!-- b multiple selection form -->
+    <div class="col-md-4">
+      <form class="form-vertical">
+        <!-- Select Multiple -->
+        <div class="form-group">
+          <div class="alert alert-info" role="alert" aligned="center">
+            suggestions..</div>
+          <div class="col-md-12">
+            <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple">
+              <option value="01">Seattle</option>
+              <option value="02">Washington</option>
+              <option value="03">Detroit</option>
+              <option value="04">Denver</option>
+              <option value="05">Austin</option>
+              <option value="06">San Francisco</option>
+              <option value="07">Dallas-Fort Worth</option>
+              <option value="08">New York City</option>
+              <option value="09">Orlando</option>
+              <option value="10">Raleigh-Durham</option>
+            </select>
+            </select>
+          </div>
+        </div>
+      </form>
+      <!-- Button (Double) -->
+      <div class="form-group">
+        <label>
+          add...
+        </label>
+        <button id="button1id" name="button1id" class="btn btn-info">selected</button>
+        <button id="button1id" name="button1id" class="btn btn-secondary">ALL</button>
+      </div>
+    </div>
+    <!-- c COLUMN SELECTED CITY AND TITLES -->
+    <div class="col-md-4">
+      <div class="alert alert-info" aligned="center">
+        [userListCities]
+      </div>
+
+      <ul class="list-group">
+
+        <li class="list-group-item list-group-item-light">
+          <h4 aligned="center">Denver</h4>
+        </li>
+        <li class="list-group-item list-group-item-light">
+          <h4 aligned="center">Austin</h4>
+        </li>
+        <li class="list-group-item list-group-it em-light">
+          <h4 aligned="center"> Orlando</h4>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </div>
+  </div>
+  <!-- THIRD COL ENDS -->
+
+
+
+
+
+
+
+
+
+  <!-- js for bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
