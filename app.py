@@ -64,9 +64,9 @@ def sendUserCity():
     if request.method == "POST":
         userCityForm = request.form["City"]
         userInputCity.append(userCityForm)
-        return render_template("00FormsPre.html", jobDisplayList=userInputJob,cityDisplayList=userInputCity)
+        return render_template("00Forms.html", jobDisplayList=userInputJob,cityDisplayList=userInputCity)
 
-    return render_template("00FormsPre.html", jobDisplayList=userInputJob,cityDisplayList=userInputCity)
+return render_template("00Forms	        .html", jobDisplayList=userInputJob,cityDisplayList=userInputCity)
 
 @app.route("/user/job")
 def userDataJob():
