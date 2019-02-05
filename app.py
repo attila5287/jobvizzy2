@@ -1,5 +1,10 @@
 # import necessary libraries
-from flask import Flask, render_template, redirect
+from flask import (
+    Flask, 
+    render_template, 
+    redirect, 
+    jsonify,
+    request)
 from flask_pymongo import PyMongo
 from pymongo import MongoClient
 import pymongo
@@ -20,30 +25,45 @@ app = Flask(__name__)
 
 mongo_uri = 'mongodb://heroku_attila5287:jobvizzy1@ds113495.mlab.com:13495/heroku_m3j2ckrz'
 app.config['MONGO_URI'] = mongo_uri
-flask_debug=False
+flask_debug = False
 app.config['FLASK_DEBUG'] = flask_debug
 # Create db connection
 mongo = PyMongo(app,uri=mongo_uri)
-# Create a database
+
+# Create a list to hold our data
+userInput = []
+userJob = ""
+userCity = ""
 
 
 
-@app.route("/")
+@app.route("/index")
 def home():
 
     return render_template("index.html")
 
 
-@app.route("/00/")
-def user():
+@app.route("/", methods=["GET", "POST"])
+@app.route("/send/job", methods=["GET", "POST"])
+def sendUserJob():
+    pass
+    if request.method == "POST":
+        userJobForm = request.form["Job"]
+
+        userInput.append(userJobForm)
+
+        return render_template("00Forms.html", jobDisplayList=userInput)
 
     return render_template("00Forms.html")
 
-
+@app.route("/user/job")
+def data():
+    print(userInput)
+    return jsonify(userInput)
 
 @app.route("/01/")
 def scrap():
-
+    pass
     return render_template("01Scraper.html")
 
 
@@ -56,12 +76,14 @@ def listerDemo():
 @app.route("/03/")
 def lister():
     pass
-    fulljobVizdata = JobVizzY.scrapListFrameDict(userListJobs, userListCities)
-# Insert job listings into mongoDb
+    fulljobVizdata = JobVizzY.scrapListFrameDict(
+    userListJobs, userListCities)
+# Insert job listings into mongoDb1
+    
     mongo.db.collection.drop()
     mongo.db.collection.insert_many(fulljobVizdata)
     inventory = list(mongo.db.collection.find())
-    
+   
     return render_template("02Lister.html", inventory=inventory, cityListSampleCut=cityListSampleCut)
 
 
