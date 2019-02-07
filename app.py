@@ -32,6 +32,7 @@ userInputCity = []
 
 
 
+
 @app.route("/index")
 def home():
 
@@ -43,6 +44,12 @@ def forms():
     pass
 
     return render_template("00Forms.html", jobDisplayList=userInputJob,cityDisplayList=userInputCity)
+
+def resetButton():
+    userInputJob = []
+    userInputCity = []
+    return render_template("00Forms.html", jobDisplayList=userInputJob,cityDisplayList=userInputCity)
+
 
 
 @app.route("/send/job", methods=["GET", "POST"])
@@ -66,6 +73,14 @@ def sendUserCity():
         userInputCity.append(userCityForm)
         return render_template("00Forms.html", jobDisplayList=userInputJob,cityDisplayList=userInputCity)
 
+    return render_template("00Forms.html", jobDisplayList=userInputJob,cityDisplayList=userInputCity)
+
+
+@app.route("/user/reset", methods=["GET", "POST"])
+def userRes3t():
+    if request.method == "POST":
+        userInputJob = []
+        userInputCity = []
     return render_template("00Forms.html", jobDisplayList=userInputJob,cityDisplayList=userInputCity)
 
 @app.route("/user/job")
