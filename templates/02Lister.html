@@ -2,141 +2,144 @@
 <html>
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>2_ListerGrid</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- First: css req'd for bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-    crossorigin="anonymous">
-  <!-- Second: req'd for style mod -->
-  <style>
-    /* navbar-START*/
-    .navbar a {
-      color: rgb(30, 255, 0);
-      font-size: 16px;
-      font-family: monospace
-    }
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        JobVizzy_resultsGrid
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    a.nav-link.disabled {
-      color: #9800f0;
-      font-size: 20px;
-      font-family: 'Courier New', Courier, monospace
-    }
+    <style>
+        /* navbar-START*/
+        
+        p {
+            font-family: monospace;
+            color: #560088;
+            font-weight: 600;
+        }
+        
+        .btn-primary {
+            background-color: #9800f0;
+            border-color: #ffffff;
+        }
+        
+        .navbar a {
+            color: rgb(30, 255, 0);
+            font-size: 16px;
+            font-family: monospace
+        }
+        
+        a.nav-link.disabled {
+            color: #9800f0;
+            font-size: 20px;
+            font-family: 'Courier New', Courier, monospace
+        }
+        
+        a.nav-link.active {
+            color: #15ff00;
+            font-size: 22px;
+            font-style: italic;
+        }
+        /* navbar-END */
+        
+        .container {
+            padding: 4px;
+            border: 1.50px dashed #9800f0
+        }
+        
+        .row {
+            padding: 10px;
+        }
+        
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+        
+        body {
+            /* Padding bottom by footer height */
+            padding-bottom: 10px;
+            padding-top: 10px;
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+    </style>
 
-    a.nav-link.active {
-      color: #15ff00;
-      font-size: 22px;
-      font-style: italic;
-    }
-
-    /* navbar-END */
-
-    .container {
-      padding: 4px;
-      border: 1.75px dashed #9800f0
-    }
-
-    .row {
-      padding: 10px;
-    }
-
-    html {
-      position: relative;
-      min-height: 100%;
-    }
-
-    body {
-      /* Padding bottom by footer height */
-      padding-bottom: 10px;
-      padding-top: 10px;
-      padding-left: 2px;
-      padding-right: 2px;
-    }
-
-  </style>
-
-  <!-- <script src="main.js"></script> -->
 </head>
 
 <body>
-  <!-----------00 NAV BAR ICON TOTAL TWO BARS STACKED--  -->
-  <nav class="navbar navbar-dark" style="background-color: #560088;">
-    <a class="navbar-brand" href="#">
-      <img src="https://raw.githubusercontent.com/attila5287/DU_Coding_PR02_JobVizzy_flask_python_MongoDB_JavaScript_Plotly_BeautifulSoup/master/favicon.ico"
-        width="50" height="50" class="d-inline-block align-top" alt="">
-      JobVizzY
-    </a>
+    <!-----------00 NAV BAR ICON TOTAL TWO BARS STACKED--  -->
+    <nav class="navbar navbar-dark" style="background-color: #560088;">
+        <a class="navbar-brand" href="#">
+            <img src="https://raw.githubusercontent.com/attila5287/DU_Coding_PR02_JobVizzy_flask_python_MongoDB_JavaScript_Plotly_BeautifulSoup/master/assets/img/favicon.ico" width="30" height="30" class="d-inline-block align-top" alt=""> JobVizzY
+        </a>
 
-    <a class="nav-link active" href="#">00.Welcome</a>
-    <a class="nav-link" href="#">0.UserProfiler</a>
-    <a class="nav-link" href="#">1.WebScraper</a>
-    <a class="nav-link" href="#">2.Lister</a>
-    <a class="nav-link" href="#">3.Bubbler</a>
-    </a>
-  </nav>
-  <!-- -----------------FIRST main navbar ends------------>
-  <ul class="nav justify-content-center" style="background-color: #bb7dee">
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#">PR02:Full-Stack Web Framework ATTILA|OMER|OSAME</a>
-    </li>
-  </ul>
-  <br>
-  <!-- second navbar only for decoration -->
-  <!--------------------  SECOND navbar_End---------------->
-
-
-  <!--------------- 2 MOD CONTAINER------------ -->
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="alert alert-success" role="alert" align="center">
-          <b>* * * SECOND MODULE: SCRAPER* * * </b>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- ------------END OF MOD CONTAINER ------->
-    <div class="container text-center">
-      <div class="container">
-        <h1 class="jumbotron" style="background-color: #bb7dee; color:darkslateblue;"><img src="https://raw.githubusercontent.com/attila5287/DU_Coding_PR02_JobVizzy_flask_python_MongoDB_JavaScript_Plotly_BeautifulSoup/master/assets/img/jobVizzyLogoFinal_SmallSimple.png">
-        </h1>
-      </div>
-      
-
-      <div class="row">
-        <!-- write a for loop that lists out your data and accesses the values using dot notation. -->
-        {% for item in inventory %}
-
-        <div class="col-4">
-          <div class="card text-white bg-dark mb-3" style="max-width: 18rem; ">
-            <div class="card-header">{{item.cityJob}}</div>
-            <div class="card-body" style="background-color: #bb7dee">
-              <h4 class="card-title">{{ item.Title }}</h4>
-              <p class="card-text">{{ item.Description}}</p>
+        <a class="nav-link" href="/index/">Index</a>
+        <button id="button1id" name="button1id" class="btn btn-info"><a class="nav-link-active" href="/00">0.Profiler</a></button>
+        <a class="nav-link" href="/01/">1.Scraper</a>
+        <a class="nav-link" href="/02/">2.Tabulator</a>
+        <a class="nav-link" href="/03/">2.Croupier</a>
+        <a class="nav-link" href="/04/">3.Bubbler</a>
+        <a class="nav-link" href="/05/">4.Locator</a>
+        </a>
+    </nav>
+    <!-- -----------------FIRST main navbar ends------------>
+    <ul class="nav justify-content-center" style="background-color: #bb7dee">
+        <li class="nav-item">
+            <a class="nav-link disabled" href="#">Full-Stack Web Framework Project | ATTILA5287</a>
+        </li>
+    </ul>
+    <br>
+    <!--------------- 2 MOD CONTAINER------------ -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="alert alert-success" role="alert" align="center">
+                    <b>* * * SECOND MODULE: SCRAPER* * * </b>
+                </div>
             </div>
-            <div class="card-footer">
-              {{item.Company}}
-            </div>
-          </div>
         </div>
 
-        {% endfor %}
 
-      </div>
-    </div>
+        <!-- ------------END OF MOD CONTAINER ------->
+        <div class="container text-center">
+            <div class="container">
+                <h1 class="jumbotron" style="background-color: #bb7dee; color:darkslateblue;"><img src="https://raw.githubusercontent.com/attila5287/DU_Coding_PR02_JobVizzy_flask_python_MongoDB_JavaScript_Plotly_BeautifulSoup/master/assets/img/jobVizzyLogoFinal_SmallSimple.png">
+                </h1>
+            </div>
 
 
-    <!-- BOTTOM_JQ_POPPER_JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"></script>
-    <!-- BOTTOM_end -->
+            <div class="row">
+                <!-- write a for loop that lists out your data and accesses the values using dot notation. -->
+                {% for item in inventory %}
+
+                <div class="col-4">
+                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem; ">
+                        <div class="card-header">{{item.cityJob}}</div>
+                        <div class="card-body" style="background-color: #bb7dee">
+                            <h4 class="card-title">{{ item.Title }}</h4>
+                            <p class="card-text">{{ item.Description}}</p>
+                        </div>
+                        <div class="card-footer">
+                            {{item.Company}}
+                        </div>
+                        <a href="#" class="badge badge-secondary">Secondary</a>
+                    </div>
+                </div>
+
+                {% endfor %}
+
+            </div>
+        </div>
+
+
+        <!-- BOTTOM_JQ_POPPER_JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <!-- BOTTOM_end -->
 </body>
 
 </html>

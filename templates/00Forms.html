@@ -17,10 +17,20 @@
         p {
             font-family: monospace;
             color: #560088;
-            font-weight: 600;
+            font-weight: 500;
+        }
+        
+        .alert-primary {
+            background-color: #d8baf1;
+            border-color: #ffffff;
         }
         
         .btn-primary {
+            background-color: #9800f0;
+            border-color: #ffffff;
+        }
+        
+        .badge-primary {
             background-color: #9800f0;
             border-color: #ffffff;
         }
@@ -88,7 +98,7 @@
     <!-- -----------------FIRST main navbar ends------------>
     <ul class="nav justify-content-center" style="background-color: #bb7dee">
         <li class="nav-item">
-            <a class="nav-link disabled" href="#">PR02:Full-Stack Web Framework by ATTILA</a>
+            <a class="nav-link disabled" href="#">Full-Stack Web Framework Project | ATTILA5287</a>
         </li>
     </ul>
     <br>
@@ -106,7 +116,7 @@
         </span>
             </div>
         </div>
-    </div>
+    </div><br>
     <!-- LOGO END -->
 
     <!-- Row for CITY -->
@@ -115,7 +125,9 @@
             <div class="col-md-12">
                 <!-- display user preferences -->
                 <div class="alert alert-info" style="background-color:#bb7dee">
-                    <h5 aligned="center">userListJobs</h5>
+                    <h5>
+                        <p style="color: white">jobs selected</p>
+                    </h5>
                     {% for job in jobDisplayList %}
                     <button type="button" class="btn btn-info">
                   <h1>{{ job}}</button></h1> {% endfor %}
@@ -126,59 +138,69 @@
             <div class="col-md-12">
                 <!-- display user preferences -->
                 <div class="alert alert-info" style="background-color:#bb7dee">
-                    <h5 aligned="center">userInputCity</h5>
+                    <h5>
+                        <p style="color: white">city selected:</p>
+                    </h5>
                     {% for city in cityDisplayList %}
                     <button type="button" class="btn btn-primary"><h3>{{ city}}</h3></button> {% endfor %}
                 </div>
             </div>
         </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="d-flex bg-info justify-content-center">
-                        <form class="form3" method="POST" action="/user/reset">
-                            <button class="btn btn-info" type="onclick" onclick="resetButton()">
-                            <h1><p>RES3T</p>
-                        <i class="fa fa-battery-4" aria-hidden="true" style="color:#560088"></i>
-                        <i class="fa fa-battery-0" aria-hidden="true" style="color:#560088"></i>
-                      </h1>
-                        </form>
-                    </div>
+    </div><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="d-flex bg-info justify-content-center">
+                    <form class="form3" method="POST" action="/user/reset">
+                        <button class="btn btn-info" type="onclick" onclick="resetButton()">
+                        <h1 style="font-family: monospace; color: thistle"><p>RES3T</p>
+                    <i class="fa fa-battery-4" aria-hidden="true" style="color:#560088"></i>
+                    <i class="fa fa-battery-0" aria-hidden="true" style="color:#560088"></i>
+                    </h1>
+                    </form>
                 </div>
-                <div class="col-md-6">
-                    <div class="d-flex justify-content-center">
-                        <a class="page-link" href="/03/">
-                            <div class="btn btn-light">
-                                <h6>
-                                    <p>hit the button for next module!</p>
-                                </h6>
-                                <img display="d-flex" src="https://raw.githubusercontent.com/attila5287/jobvizzy2_assets/master/logoAllModules/scraper03.png" width="280px">
-                            </div>
-                        </a>
-                    </div>
+            </div>
+            <div class="col-md-6">
+                <div class="d-flex justify-content-center">
+                    <a class="page-link" href="/03/">
+                        <div class="btn btn-light">
+                            <h6>
+                                <p>hit the button for next module!</p>
+                            </h6>
+                            <img display="d-flex" src="https://raw.githubusercontent.com/attila5287/jobvizzy2_assets/master/logoAllModules/scraper03.png" width="280px">
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
+    </div><br>
         <!-- USER INPUT -->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <form class="form1" method="POST" action="/send/job">
-                        <label for="inputJob">job title here:</label>
-                        <input type="text" id="inputJob" name="Job">
-                        <input type="submit" value="submit1">
-                    </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="alert alert-primary" role="alert">
+                    <h1><p style="color: white">job title</p>
+                    </h1>
                 </div>
-                <div class="col-md-6">
-                    <form class="form2" method="POST" action="/send/city">
-                        <label for="inputCity">city here:</label>
-                        <input type="text" id="inputCity" name="City">
-                        <input type="submit" value="submit2">
-                    </form>
+                <form class="mb-4 form-control" method="POST" action="/send/job">
+                    <label for="inputJob"><p>type here:</p></label>
+                    <input class="mb-4 form-control" type="text" id="inputJob" name="Job">
+                    <input class="p-4 mb-4 btn btn-primary" type="submit" value="add job">
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div class="alert alert-primary" role="alert">
+                        <h1><p style="color: white">city here</p>
+                        </h1>
                 </div>
+                <form class="mb-4 form-control" method="POST" action="/send/city">
+                    <label for="inputCity"><p>type here:</p></label>
+                    <input class="mb-4 form-control" type="text" id="inputCity" name="City">
+                    <input class="p-4 mb-4 btn btn-primary" type="submit" value="add city">
+                </form>
             </div>
         </div>
+    </div>
 
         <br>
 

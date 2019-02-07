@@ -45,12 +45,6 @@ def forms():
 
     return render_template("00Forms.html", jobDisplayList=userInputJob,cityDisplayList=userInputCity)
 
-def resetButton():
-    userInputJob = []
-    userInputCity = []
-    return render_template("00Forms.html", jobDisplayList=userInputJob,cityDisplayList=userInputCity)
-
-
 
 @app.route("/send/job", methods=["GET", "POST"])
 def sendUserJob():
@@ -78,10 +72,13 @@ def sendUserCity():
 
 @app.route("/user/reset", methods=["GET", "POST"])
 def userRes3t():
+
     if request.method == "POST":
-        userInputJob = []
-        userInputCity = []
-    return render_template("00Forms.html", jobDisplayList=userInputJob,cityDisplayList=userInputCity)
+        userInputJob.clear()
+        print(userInputJob)
+        userInputCity.clear()
+        print(userInputCity)
+    return redirect("/", code=302)
 
 @app.route("/user/job")
 def userDataJob():
@@ -92,8 +89,6 @@ def userDataJob():
 def userDataCity():
     print(userInputCity)
     return jsonify(userInputCity)    
-
-
 
 
 # not much functional
@@ -113,14 +108,10 @@ def listerDemo():
 def lister():
     pass
     fulljobVizdata = JobVizzY.scrapListFrameDict(userInputJob, userInputCity)
-
-    
 # Insert job listings into mongoDb1
-    
     mongo.db.collection.drop()
     mongo.db.collection.insert_many(fulljobVizdata)
     inventory = list(mongo.db.collection.find())
-   
     return render_template("02Lister.html", inventory=inventory)
 
 
