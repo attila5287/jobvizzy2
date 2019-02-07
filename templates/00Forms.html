@@ -2,181 +2,195 @@
 <html>
 
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>
-    JobVizzy_userInput
-  </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        JobVizzy_userInput
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <style>
-    /* navbar-START*/
-  .navbar a {
-    color: rgb(30, 255, 0);
-    font-size: 16px;
-    font-family: monospace
-  }
-
-  a.nav-link.disabled {
-    color: #9800f0;
-    font-size: 20px;
-    font-family: 'Courier New', Courier, monospace
-  }
-
-  a.nav-link.active {
-    color: #15ff00;
-    font-size: 22px;
-    font-style: italic;
-  }
-
-  /* navbar-END */
-
-  .container {
-    padding: 4px;
-    border: 1.75px dashed #9800f0
-  }
-
-  .row {
-    padding: 10px;
-  }
-
-  html {
-    position: relative;
-    min-height: 100%;
-  }
-
-  body {
-    /* Padding bottom by footer height */
-    padding-bottom: 10px;
-    padding-top: 10px;
-    padding-left: 2px;
-    padding-right: 2px;
-  }
-</style>
+    <style>
+        /* navbar-START*/
+        
+        p {
+            font-family: monospace;
+            color: #560088;
+            font-weight: 600;
+        }
+        
+        .btn-primary {
+            background-color: #9800f0;
+            border-color: #ffffff;
+        }
+        
+        .navbar a {
+            color: rgb(30, 255, 0);
+            font-size: 16px;
+            font-family: monospace
+        }
+        
+        a.nav-link.disabled {
+            color: #9800f0;
+            font-size: 20px;
+            font-family: 'Courier New', Courier, monospace
+        }
+        
+        a.nav-link.active {
+            color: #15ff00;
+            font-size: 22px;
+            font-style: italic;
+        }
+        /* navbar-END */
+        
+        .container {
+            padding: 4px;
+            border: 1.50px dashed #9800f0
+        }
+        
+        .row {
+            padding: 10px;
+        }
+        
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+        
+        body {
+            /* Padding bottom by footer height */
+            padding-bottom: 10px;
+            padding-top: 10px;
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+    </style>
 
 </head>
 
 <body>
-  <!-----------00 NAV BAR ICON TOTAL TWO BARS STACKED--  -->
-  <nav class="navbar navbar-dark" style="background-color: #560088;">
-    <a class="navbar-brand" href="#">
-      <img src="https://raw.githubusercontent.com/attila5287/DU_Coding_PR02_JobVizzy_flask_python_MongoDB_JavaScript_Plotly_BeautifulSoup/master/assets/img/favicon.ico"
-        width="30" height="30" class="d-inline-block align-top" alt="">
-             JobVizzY
-    </a>
+    <!-----------00 NAV BAR ICON TOTAL TWO BARS STACKED--  -->
+    <nav class="navbar navbar-dark" style="background-color: #560088;">
+        <a class="navbar-brand" href="#">
+            <img src="https://raw.githubusercontent.com/attila5287/DU_Coding_PR02_JobVizzy_flask_python_MongoDB_JavaScript_Plotly_BeautifulSoup/master/assets/img/favicon.ico" width="30" height="30" class="d-inline-block align-top" alt=""> JobVizzY
+        </a>
 
-    <a class="nav-link" href="/index/">Index</a>
-    <button id="button1id" name="button1id" class="btn btn-info"><a class="nav-link-active" href="/00">0.Profiler</a></button>
-    <a class="nav-link" href="/01/">1.Scraper</a>
-    <a class="nav-link" href="/02/">2.Tabulator</a>
-    <a class="nav-link" href="/03/">2.Croupier</a>
-    <a class="nav-link" href="/04/">3.Bubbler</a>
-    <a class="nav-link" href="/05/">4.Locator</a>
-    </a>
-  </nav>
-  <!-- -----------------FIRST main navbar ends------------>
-  <ul class="nav justify-content-center" style="background-color: #bb7dee">
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#">PR02:Full-Stack Web Framework ATTILA|OMER|OSAME</a>
-    </li>
-  </ul>
-  <br>
-  <!-- second navbar only for decoration -->
-  <!--------------------  SECOND navbar_End---------------->
+        <a class="nav-link" href="/index/">Index</a>
+        <button id="button1id" name="button1id" class="btn btn-info"><a class="nav-link-active" href="/00">0.Profiler</a></button>
+        <a class="nav-link" href="/01/">1.Scraper</a>
+        <a class="nav-link" href="/02/">2.Tabulator</a>
+        <a class="nav-link" href="/03/">2.Croupier</a>
+        <a class="nav-link" href="/04/">3.Bubbler</a>
+        <a class="nav-link" href="/05/">4.Locator</a>
+        </a>
+    </nav>
+    <!-- -----------------FIRST main navbar ends------------>
+    <ul class="nav justify-content-center" style="background-color: #bb7dee">
+        <li class="nav-item">
+            <a class="nav-link disabled" href="#">PR02:Full-Stack Web Framework ATTILA|OMER|OSAME</a>
+        </li>
+    </ul>
+    <br>
+    <!-- second navbar only for decoration -->
+    <!--------------------  SECOND navbar_End---------------->
 
-  <!--------------- 0 LOGO W/O WELCOME ---------- -->
-  <div class="row">
-    <div class="col-12">
-      <div class="container">
-        <span class="border">
+    <!--------------- 0 LOGO W/O WELCOME ---------- -->
+    <div class="row">
+        <div class="col-12">
+            <div class="container">
+                <span class="border">
           <div class="d-flex justify-content-center" >
             <img src="https://raw.githubusercontent.com/attila5287/jobvizzy2_assets/master/logoAllModules/pro1.png">
           </div>
         </span>
-      </div>
+            </div>
+        </div>
     </div>
-  </div> 
-      <!-- LOGO END -->
+    <!-- LOGO END -->
 
-  <!-- Row for CITY -->
-  <div class="container">
-    <div class="row">
-        <div class="col-md-6">
-          <!-- display user preferences -->
-          <div class="alert alert-info" style="background-color:#bb7dee">
-            <h5 aligned="center">userInputCity</h5>
-            {% for city in cityDisplayList %}
-              <button type="button" class="btn btn-info" >{{ city}}</button>
-            {% endfor %}
-          </div>
+    <!-- Row for CITY -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- display user preferences -->
+                <div class="alert alert-info" style="background-color:#bb7dee">
+                    <h5 aligned="center">userListJobs</h5>
+                    {% for job in jobDisplayList %}
+                    <button type="button" class="btn btn-info">
+                  <h1>{{ job}}</button></h1> {% endfor %}
+                </div>
+            </div>
         </div>
-    </div>  
-    <div class="row">
-      <div class="col-md-6">
-        <!-- display user preferences -->
-        <div class="alert alert-info" style="background-color:#bb7dee">
-          <h5 aligned="center">userListJobs</h5>
-          {% for job in jobDisplayList %}
-            <button type="button" class="btn btn-info" >{{ job}}</button>
-          {% endfor %}
+        <div class="row">
+            <div class="col-md-12">
+                <!-- display user preferences -->
+                <div class="alert alert-info" style="background-color:#bb7dee">
+                    <h5 aligned="center">userInputCity</h5>
+                    {% for city in cityDisplayList %}
+                    <button type="button" class="btn btn-primary"><h3>{{ city}}</h3></button> {% endfor %}
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-md-2">
-        <div class="d-flex justify-content-center">
-          <button type="reset" class="btn btn-info"><h1>Reset
-            <i class="fa fa-battery-4" aria-hidden="true"></i>
-            <i class="fa fa-battery-0" aria-hidden="true"></i></h1>
-          </button>
-        </div>  
-      </div><br>
-      <div class="col-md-4">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="d-flex bg-info justify-content-center">
+                        <button type="reset" class="btn btn-info">
+                      <h1>
+                        <p>
+                          RES3T
+                        </p>
+                        <i class="fa fa-battery-4" aria-hidden="true" style="color:#560088"></i>
+                        <i class="fa fa-battery-0" aria-hidden="true" style="color:#560088"></i>
+                      </h1>
+                  </button>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-center">
+                        <a class="page-link" href="/03/">
+                            <div class="btn btn-light">
+                                <h6>
+                                    <p>hit the button for next module!</p>
+                                </h6>
+                                <img display="d-flex" src="https://raw.githubusercontent.com/attila5287/jobvizzy2_assets/master/logoAllModules/scraper03.png" width="280px">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- USER INPUT -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <form class="form1" method="POST" action="/send/job">
+                        <label for="inputJob">job title here:</label>
+                        <input type="text" id="inputJob" name="Job">
+                        <input type="submit" value="submit1">
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <form class="form2" method="POST" action="/send/city">
+                        <label for="inputCity">city here:</label>
+                        <input type="text" id="inputCity" name="City">
+                        <input type="submit" value="submit2">
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <br>
-        <div class="d-flex justify-content-center">
-          <a class="page-link" href="/03/">
-            <img display="d-flex"         
-                src="https://raw.githubusercontent.com/attila5287/jobvizzy2_assets/master/logoAllModules/scraper03.png" width="280px"></a> 
-          </div>    
-          
-        </div>
-      </div>
-    </div>
-  </div>
-  </div><br>
 
 
-  <!-- USER INPUT -->
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <form class="form1" method="POST" action="/send/job">    
-          <label for="inputJob">job title here:</label>
-          <input type="text" id="inputJob" name="Job">
-          <input type="submit" value="submit1">
-        </form>  
-      </div>
-      <div class="col-md-6">
-        <form class="form2" method="POST" action="/send/city">    
-          <label for="inputCity">city here:</label>
-          <input type="text" id="inputCity" name="City">
-          <input type="submit" value="submit2">
-        </form>  
-      </div>
-      <br>
-    </div>
-  </div>
 
-  
-
-  <!-- js for bootstrap -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
+        <!-- js for bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
-</html>
+</html>`
