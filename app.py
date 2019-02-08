@@ -26,18 +26,23 @@ userInputJob = []
 userInputCity = []
 
 
+@app.before_first_request
+def setup():
+    userInputJob.clear
+    userInputCity.clear
+    return ()
+
 
 
 @app.route("/index")
 def home():
-
+    pass
     return render_template("index.html")
 
 
 @app.route("/", methods=["GET", "POST"])
 def forms():
     pass
-
     return render_template("00Forms.html", jobDisplayList=userInputJob,cityDisplayList=userInputCity)
 
 
@@ -65,21 +70,15 @@ def sendUserCity():
 
         return redirect("/")
 
-        return redirect("/")
+    return redirect("/")
 
 
 # @app.route('/test/000')
 # def test():
 #     return render_template('000T3stMod.html')
 
-# @app.route('/test/cookies')
-# def testCookies():
-#     return render_template('000T3stCookies.html')
-
-
 @app.route("/user/reset", methods=["GET", "POST"])
 def userRes3t():
-
     if request.method == "POST":
         userInputJob.clear()
         print(userInputJob)

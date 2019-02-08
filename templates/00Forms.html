@@ -7,7 +7,12 @@
     <title>
         JobVizzy_userInput
     </title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="mask-icon" href="https://raw.githubusercontent.com/attila5287/jobvizzy2_assets/master/mascotOWL/owl_svg.svg" color="#000000">
+    <link rel="favicon" type="image/x-icon" class="favicon" href="https://raw.githubusercontent.com/attila5287/jobvizzy2_assets/master/mascotOWL/owl_icon.ico">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -176,31 +181,31 @@
     </div><br>
         <!-- USER INPUT -->
     <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="alert alert-primary" role="alert">
-                    <h1><p style="color: white">job title</p>
-                    </h1>
-                </div>
-                <form class="mb-4 form-control" method="POST" action="/send/job">
-                    <label for="inputJob"><p>type here:</p></label>
-                    <input class="mb-4 form-control" type="text" id="inputJob" name="Job">
-                    <input class="p-4 mb-4 btn btn-primary" type="submit" value="add job">
-                </form>
-            </div>
-            <div class="col-md-6">
-                <div class="alert alert-primary" role="alert">
-                        <h1><p style="color: white">city here</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="alert alert-primary" role="alert">
+                        <h1><p style="color: white">job title</p>
                         </h1>
+                    </div>
+                    <form class="mb-4 form-control" method="POST" action="/send/job">
+                        <label for="inputJob"><p>type here:</p></label>
+                        <input class="mb-4 form-control" type="text" id="inputJob" name="Job">
+                        <input class="p-4 mb-4 btn btn-primary" type="submit" value="add job">
+                    </form>
                 </div>
-                <form class="mb-4 form-control" method="POST" action="/send/city">
-                    <label for="inputCity"><p>type here:</p></label>
-                    <input class="mb-4 form-control" type="text" id="inputCity" name="City">
-                    <input class="p-4 mb-4 btn btn-primary" type="submit" value="add city">
-                </form>
+                <div class="col-md-6">
+                    <div class="alert alert-primary" role="alert">
+                            <h1><p style="color: white">city here</p>
+                            </h1>
+                    </div>
+                    <form class="mb-4 form-control" method="POST" action="/send/city">
+                        <label for="inputCity"><p>type here:</p></label>
+                        <input class="mb-4 form-control" type="text" id="inputCity" name="City">
+                        <input class="p-4 mb-4 btn btn-primary" type="submit" value="add city">
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
 
         <br>
 
