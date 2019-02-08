@@ -4,17 +4,12 @@ from flask import (
     render_template, 
     redirect, 
     jsonify,
-    request)
+    request,
+    make_response,
+    url_for
+    )
 from flask_pymongo import PyMongo
-import pymongo
-
-import pandas as pd
-from bs4 import BeautifulSoup
-import requests
-
 import JobVizzY
-from JobVizzY import scrapListFrameDict
-from userInput import userListCities
 
 # create instance of Flask app
 app = Flask(__name__)
@@ -54,20 +49,32 @@ def sendUserJob():
         userJobForm = request.form["Job"]
         userInputJob.append(userJobForm)
 
-        return render_template("00Forms.html", jobDisplayList=userInputJob,cityDisplayList=userInputCity)
+        return redirect("/")
 
-    return render_template("00Forms.html")
+    return redirect("/")
 
 
 @app.route("/send/city", methods=["GET", "POST"])
 def sendUserCity():
     pass
     if request.method == "POST":
-        userCityForm = request.form["City"]
-        userInputCity.append(userCityForm)
-        return render_template("00Forms.html", jobDisplayList=userInputJob,cityDisplayList=userInputCity)
 
-    return render_template("00Forms.html", jobDisplayList=userInputJob,cityDisplayList=userInputCity)
+        userCityForm = request.form["City"]
+
+        userInputCity.append(userCityForm)
+
+        return redirect("/")
+
+        return redirect("/")
+
+
+# @app.route('/test/000')
+# def test():
+#     return render_template('000T3stMod.html')
+
+# @app.route('/test/cookies')
+# def testCookies():
+#     return render_template('000T3stCookies.html')
 
 
 @app.route("/user/reset", methods=["GET", "POST"])
