@@ -1,12 +1,13 @@
 - - - - - - - - - - - (Code)
 []	add user login
 []	add cookies for city/job
-[]	shrink module logo
-[]	add list option
+[]	add Lister module!
 []	re-write JpyNB code!!!
+[]	-
+[]	-
 - - - - - - - - - - - (Cosmetic)
-[]	-
-[]	-
+[]	shrink module logo
+[]	how to add ICON
 []	-
 []	-
 []	-
