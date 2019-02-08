@@ -34,7 +34,7 @@ def setup():
 
 
 
-@app.route("/index")
+@app.route("/index/", methods=["GET", "POST"])
 def home():
     pass
     return render_template("index.html")
