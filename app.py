@@ -32,7 +32,7 @@ def setup():
     userInputCity.clear
     return ()
 
-
+# intro now under index
 
 @app.route("/index/", methods=["GET", "POST"])
 def home():
