@@ -34,9 +34,9 @@ def setup():
     userInputCity.clear()
     return ()
 
-SESSION_TYPE = 'Redis'
-app.config.from_object(__name__)
-Session(app)
+# SESSION_TYPE = 'Redis'
+# app.config.from_object(__name__)
+# Session(app)
 
 @app.route('/set/')
 def set():
@@ -144,9 +144,6 @@ def bubbler():
     return render_template("03Bubbler.html", cityList=cityList, jobList=jobList)
 
 
-# @app.route('/test/00')
-# def test():
-#     return render_template('000T3stMod.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
