@@ -90,12 +90,6 @@ def sendUserCity():
     return 
 
 
-# @app.route('/test/000')
-# def test():
-#     return render_template('000T3stMod.html')
-# Check Configuration section for more details
-
-
 @app.route("/user/reset", methods=["GET", "POST"])
 def userRes3t():
     if request.method == "POST":
@@ -149,6 +143,10 @@ def bubbler():
                ]
     return render_template("03Bubbler.html", cityList=cityList, jobList=jobList)
 
+
+# @app.route('/test/00')
+# def test():
+#     return render_template('000T3stMod.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
