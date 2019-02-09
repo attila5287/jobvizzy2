@@ -6,13 +6,15 @@ from flask import (
     jsonify,
     request,
     make_response,
-    url_for
+    url_for,
+    session
     )
 from flask_pymongo import PyMongo
 import JobVizzY
+from flask_session import Session
 
 # create instance of Flask app
-app = Flask(__name__)
+app = Flask(__name__)       
 
 mongo_uri = 'mongodb://heroku_attila5287:jobvizzy1@ds113495.mlab.com:13495/heroku_m3j2ckrz'
 app.config['MONGO_URI'] = mongo_uri
@@ -28,19 +30,34 @@ userInputCity = []
 
 @app.before_first_request
 def setup():
-    userInputJob.clear
-    userInputCity.clear
+    userInputJob.clear()
+    userInputCity.clear()
     return ()
 
-# intro now under index
+SESSION_TYPE = 'Redis'
+app.config.from_object(__name__)
+Session(app)
 
+@app.route('/set/')
+def set():
+    session['key'] = 'value'
+    return 'ok'
+
+
+@app.route('/get/')
+def get():
+    return session.get('key', 'not set')
+
+
+
+#  index more like intro now
 @app.route("/index/", methods=["GET", "POST"])
 def home():
     pass
     return render_template("index.html")
 
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/")
 def forms():
     pass
     return render_template("00Forms.html", jobDisplayList=userInputJob,cityDisplayList=userInputCity)
@@ -56,7 +73,7 @@ def sendUserJob():
 
         return redirect("/")
 
-    return redirect("/")
+    return 
 
 
 @app.route("/send/city", methods=["GET", "POST"])
@@ -70,12 +87,14 @@ def sendUserCity():
 
         return redirect("/")
 
-    return redirect("/")
+    return 
 
 
 # @app.route('/test/000')
 # def test():
 #     return render_template('000T3stMod.html')
+# Check Configuration section for more details
+
 
 @app.route("/user/reset", methods=["GET", "POST"])
 def userRes3t():
@@ -133,3 +152,4 @@ def bubbler():
 
 if __name__ == "__main__":
     app.run(debug=True)
+

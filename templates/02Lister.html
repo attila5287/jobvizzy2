@@ -8,8 +8,10 @@
         JobVizzy_resultsGrid
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="mask-icon" href="https://raw.githubusercontent.com/attila5287/jobvizzy2_assets/master/mascotOWL/owl_svg.svg" color="#560088">
+    <link rel="icon" type="image/x-icon" class="favicon" href="https://raw.githubusercontent.com/attila5287/jobvizzy2_assets/master/mascotOWL/owl_icon.ico">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">>
 
     <style>
         /* navbar-START*/
@@ -116,7 +118,7 @@
                 {% for item in inventory %}
 
                 <div class="col-4">
-                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem; ">
+                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem; "><i class="favicon" aria-hidden="true" src="favicon.ico"></i>
                         <div class="card-header">{{item.cityJob}}</div>
                         <div class="card-body" style="background-color: #bb7dee">
                             <h4 class="card-title">{{ item.Title }}</h4>
@@ -125,7 +127,7 @@
                         <div class="card-footer">
                             {{item.Company}}
                         </div>
-                        <a href="#" class="badge badge-secondary">Secondary</a>
+                        <a href="{{item.URLs}}" class="badge badge-secondary">apply</a>
                     </div>
                 </div>
 

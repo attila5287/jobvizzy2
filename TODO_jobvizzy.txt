@@ -3,12 +3,19 @@
 []	add cookies for city/job
 []	add Lister module!
 []	re-write JpyNB code!!!
-[]	-
-[]	-
 - - - - - - - - - - - (Cosmetic)
-[]	shrink module logo
-[]	how to add ICON
+[+]	shrink module logo
+[+]	how to add ICON
 []	URLLIB for city-job
+- - - - - - - - - - - (tasksCommitted)
+[]	-try setcookies
+[]	-try getcookies
+[]	-try user-info with Flask
+[]	-try ui with JS-mozilla
+[]	-
+- - - - - - - - - - - - 
 []	-
 []	-
-- - - - - - - - - - - (Perhaps?!)
+[]	-
+
+
