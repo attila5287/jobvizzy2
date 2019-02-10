@@ -5,13 +5,10 @@ from flask import (
     redirect, 
     jsonify,
     request,
-    # make_response,
-    url_for
     )
 from flask_pymongo import PyMongo
 import JobVizzY
 from JobVizzY import scrapListFrameDict
-from flask_session import Session
 
 # create instance of Flask app
 app = Flask(__name__)       
@@ -24,8 +21,8 @@ app.config['FLASK_DEBUG'] = flask_debug
 mongo = PyMongo(app,uri=mongo_uri)
 
 # Create a list to hold our data
-userInputJob = []
-userInputCity = []
+userInputJob = [""]
+userInputCity = [""]
 
 
 @app.before_first_request
