@@ -38,15 +38,15 @@ def setup():
 # app.config.from_object(__name__)
 # Session(app)
 
-@app.route('/set/')
-def set():
-    session['key'] = 'value'
-    return 'ok'
+# @app.route('/set/')
+# def set():
+#     session['key'] = 'value'
+#     return 'ok'
 
 
-@app.route('/get/')
-def get():
-    return session.get('key', 'not set')
+# @app.route('/get/')
+# def get():
+#     return session.get('key', 'not set')
 
 
 
@@ -57,7 +57,7 @@ def home():
     return render_template("index.html")
 
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def forms():
     pass
     return render_template("00Forms.html", jobDisplayList=userInputJob,cityDisplayList=userInputCity)
