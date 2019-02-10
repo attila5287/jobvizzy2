@@ -6,4 +6,6 @@ gunicorn==19.9.0
 requests==2.21.0
 pandas==0.23.0
 pymongo==3.7.2
+redis==3.1.0
+Flask-Session==0.3.1
 
