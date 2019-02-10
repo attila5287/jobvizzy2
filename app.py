@@ -16,7 +16,6 @@ mongo_uri = 'mongodb://heroku_attila5287:jobvizzy1@ds113495.mlab.com:13495/herok
 app.config['MONGO_URI'] = mongo_uri
 flask_debug = False
 app.config['FLASK_DEBUG'] = flask_debug
-# this is a must for sessions to work
 # Create db connection
 mongo = PyMongo(app,uri=mongo_uri)
 
@@ -32,22 +31,9 @@ def setup():
     return ()
 
 
-@app.route('/set/')
-def set():
-    session['key'] = 'value'
-    return 'ok'
-
-
-@app.route('/get/')
-def get():
-    return session.get('key', 'not set')
-
-
 @app.route("/", methods=["GET", "POST"])
 def forms():
     pass
-    session['job']=''
-    session['city']=''
     return render_template("00Forms.html", jobDisplayList=userInputJob, cityDisplayList=userInputCity)
 
 
@@ -56,7 +42,6 @@ def sendUserJob():
     pass
     userJobForm = request.form["Job"]
     userInputJob.append(userJobForm)
-    session['job'] = str(userJobForm)
     return render_template('00Forms.html', jobDisplayList=userInputJob, cityDisplayList=userInputCity)
 
 
@@ -65,7 +50,6 @@ def sendUserCity():
     pass
     userCityForm = request.form["City"]
     userInputCity.append(userCityForm)
-    session['city']= str(userCityForm)
     return render_template('00Forms.html', jobDisplayList=userInputJob, cityDisplayList=userInputCity)
 
 
