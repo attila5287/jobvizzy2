@@ -4,27 +4,19 @@ from flask import (
     render_template, 
     redirect, 
     jsonify,
-    request,
-    session
+    request
     )
 from flask_pymongo import PyMongo
 import JobVizzY
 from JobVizzY import scrapListFrameDict
-from flask_session import Session
-import redis
 
 # create instance of Flask app
 app = Flask(__name__)
-app.secret_key = '3d6f45a5fc12445dbac2f59c3b6c7cb1'
 mongo_uri = 'mongodb://heroku_attila5287:jobvizzy1@ds113495.mlab.com:13495/heroku_m3j2ckrz'
 app.config['MONGO_URI'] = mongo_uri
 flask_debug = False
 app.config['FLASK_DEBUG'] = flask_debug
 # this is a must for sessions to work
-app.config['SESSION_TYPE'] = 'Redis'
-app.config.from_object(__name__)
-Session(app)
-app.config['SECRET_KEY'] = '3d6f45a5fc12445dbac2f59c3b6c7cb1'
 # Create db connection
 mongo = PyMongo(app,uri=mongo_uri)
 
