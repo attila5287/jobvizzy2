@@ -6,8 +6,7 @@ from flask import (
     jsonify,
     request,
     make_response,
-    url_for,
-    session
+    url_for
     )
 from flask_pymongo import PyMongo
 import JobVizzY
@@ -47,14 +46,6 @@ def setup():
 # @app.route('/get/')
 # def get():
 #     return session.get('key', 'not set')
-
-
-
-#  index more like intro now
-@app.route("/index/", methods=["GET", "POST"])
-def home():
-    pass
-    return render_template("index.html")
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -108,7 +99,12 @@ def userDataJob():
 def userDataCity():
     print(userInputCity)
     return jsonify(userInputCity)    
-
+    
+#  index more like intro now
+@app.route("/index", methods=["GET", "POST"])
+def home():
+    pass
+    return render_template("index.html")
 
 # not much functional
 @app.route("/01/")
