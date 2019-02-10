@@ -8,8 +8,8 @@
 [+]	how to add ICON
 []	URLLIB for city-job
 - - - - - - - - - - - (tasksCommitted)
-[]	-try setcookies
-[]	-try getcookies
+[x]	-try setcookies
+[x]	-try getcookies
 []	-try user-info with Flask
 []	-try ui with JS-mozilla
 []	-
