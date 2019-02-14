@@ -73,16 +73,16 @@ def userDataCity():
     return jsonify(userInputCity)    
     
 #  index more like intro now
-@app.route("/index", methods=["GET", "POST"])
+@app.route("/index/", methods=["GET", "POST"])
 def home():
     pass
     return render_template("index.html")
 
 # not much functional
 @app.route("/01/")
-def scrap():
+def scraper():
     pass
-    return render_template("01Scraper.html")
+    return render_template("01Scraper.html", jobDisplayList=userInputJob, cityDisplayList=userInputCity)
 
 
 @app.route("/02/")

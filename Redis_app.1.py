@@ -11,7 +11,7 @@ from flask_pymongo import PyMongo
 import JobVizzY
 from JobVizzY import scrapListFrameDict
 from flask_session import Session
-import redis
+# import redis
 
 # create instance of Flask app
 app = Flask(__name__)
@@ -21,10 +21,11 @@ app.config['MONGO_URI'] = mongo_uri
 flask_debug = False
 app.config['FLASK_DEBUG'] = flask_debug
 # this is a must for sessions to work
-app.config['SESSION_TYPE'] = 'Redis'
+app.config['SESSION_TYPE'] = 'filesystem'
 app.config.from_object(__name__)
-app.config['SECRET_KEY'] = '3d6f45a5fc12445dbac2f59c3b6c7cb1'
 Session(app)
+app.config['SECRET_KEY'] = '3d6f45a5fc12445dbac2f59c3b6c7cb1'
+
 # Create db connection
 mongo = PyMongo(app,uri=mongo_uri)
 
@@ -37,6 +38,8 @@ userInputCity = [""]
 def setup():
     userInputJob.clear()
     userInputCity.clear()
+    session['job']=''
+    session['city']=''
     return ()
 
 
@@ -54,8 +57,6 @@ def get():
 @app.route("/", methods=["GET", "POST"])
 def forms():
     pass
-    session['job']=''
-    session['city']=''
     return render_template("00Forms.html", jobDisplayList=userInputJob, cityDisplayList=userInputCity)
 
 

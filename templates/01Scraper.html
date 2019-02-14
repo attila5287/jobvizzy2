@@ -2,17 +2,48 @@
 <html>
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>1_Scraper</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        JobVizzy | 01 Profiler
+    </title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- First: css req'd for bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <!-- Second: req'd for style mod -->
-    <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/main.css" />
+
+
+    <link rel="mask-icon" href="https://raw.githubusercontent.com/attila5287/jobvizzy2_assets/master/mascotOWL/owl_svg.svg" color="#560088">
+    <link rel="icon" type="image/x-icon" class="favicon" href="https://raw.githubusercontent.com/attila5287/jobvizzy2_assets/master/mascotOWL/owl_icon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style>
         /* navbar-START*/
+        
+        p {
+            font-family: monospace;
+            color: #560088;
+            font-weight: 500;
+        }
+        
+        .alert-primary {
+            background-color: #d8baf1;
+            border-color: #ffffff;
+        }
+        
+        .alert-secondary {
+            background-color: #bb7dee;
+            border-color: #ffffff;
+        }
+        
+        .btn-primary {
+            background-color: #9800f0;
+            border-color: #ffffff;
+        }
+        
+        .badge-primary {
+            background-color: #9800f0;
+            border-color: #ffffff;
+        }
         
         .navbar a {
             color: rgb(30, 255, 0);
@@ -35,7 +66,7 @@
         
         .container {
             padding: 4px;
-            border: 1.75px dashed #9800f0
+            border: 1.50px dashed #9800f0
         }
         
         .row {
@@ -56,81 +87,104 @@
         }
     </style>
 
-    <!-- <script src="main.js"></script> -->
 </head>
 
 <body>
     <!-----------00 NAV BAR ICON TOTAL TWO BARS STACKED--  -->
     <nav class="navbar navbar-dark" style="background-color: #560088;">
         <a class="navbar-brand" href="#">
-            <img src="favicon.ico" width="30" height="30" class="d-inline-block align-top" alt=""> JobVizzY
+            <img src="https://raw.githubusercontent.com/attila5287/DU_Coding_PR02_JobVizzy_flask_python_MongoDB_JavaScript_Plotly_BeautifulSoup/master/assets/img/favicon.ico" width="30" height="30" class="d-inline-block align-top" alt=""> JobVizzY
         </a>
 
-        <a class="nav-link" href="#">00.Welcome</a>
-        <a class="nav-link" href="#">0.UserProfiler</a>
-        <a class="nav-link active" href="#">1.WebScraper</a>
-        <a class="nav-link" href="#">2.Lister</a>
-        <a class="nav-link" href="#">3.Bubbler</a>
+        <a class="nav-link" href="/index/">Index</a>
+        <button id="button1id" name="button1id" class="btn btn-info"><a class="nav-link-active" href="/00">0.Profiler</a></button>
+        <a class="nav-link" href="/01/">01.Scraper</a>
+        <a class="nav-link" href="/02/">02.Tabulator</a>
+        <a class="nav-link" href="/03/">03.Croupier</a>
+        <a class="nav-link" href="/04/">04.Bubbler</a>
+        <a class="nav-link" href="/05/">05.Locator</a>
         </a>
     </nav>
     <!-- -----------------FIRST main navbar ends------------>
     <ul class="nav justify-content-center" style="background-color: #bb7dee">
         <li class="nav-item">
-            <a class="nav-link disabled" href="#">PR02:Full-Stack Web Framework ATTILA|OMER|OSAME</a>
+            <a class="nav-link disabled" href="#">Full-Stack Web Framework Project | ATTILA5287</a>
         </li>
     </ul>
     <br>
     <!-- second navbar only for decoration -->
     <!--------------------  SECOND navbar_End---------------->
-    <form method="POST" action="/send">
-
-        <label for="inputName">Name</label>
-        <input type="text" id="inputName" name="nickname">
-
-        <label for="inputAge">Age</label>
-        <input type="text" id="inputAge" name="age">
-
-        <input type="submit" value="submit">
-    </form>
 
     <!--------------- 0 LOGO W/O WELCOME ---------- -->
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-
-                <div class="container">
-                    <span class="border">
-            <div class="d-flex justify-content-center" style="background-color: #bb7dee">
-              <img src="https://raw.githubusercontent.com/attila5287/DU_Coding_PR02_JobVizzy_flask_python_MongoDB_JavaScript_Plotly_BeautifulSoup/master/assets/img/jobVizzyLogoFinal_SmallSimple.png">
-            </div>
-        </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="container">
+                <span class="border">
+          <div class="d-flex justify-content-center" >
+            <img src="https://raw.githubusercontent.com/attila5287/jobvizzy2_assets/master/logoAllModules/scrapFit_sml.png">
+          </div>
         </span>
-                </div>
-                <!-- LOGO END -->
-
-
-                <!-- -------------TABLE STARTS----------- -->
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="row">Welcome to JobVizzy, a mobile-friendly full stack web development project created as a team project by three coding bootcamp students:Attila Turkoz, Omer Kurban and Osame Ben Ismael. </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        <tr>
-                            <td>Extracts hundreds and thousands of job listings to user with a single tap/click with 'Scraper' using BeautifulSoup, requests and Splinter modules of Python. </td>
-                        </tr>
-                        <tr>
-                            <td>Transforms web data to open source database platform MongoDB and stores in lighter JSON format for smooth transfer. </td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
-
         </div>
     </div><br>
-    <!-- ---------------END OF WELCOME MSG LOGO---- -->
+    <!-- LOGO END -->
+
+
+
+    <!-- main container with jumbotron and selection lists -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="jumbotron" style="background-color: #bb7dee">
+                    <h1 class="display-4" style="color: white">Scraper</h1>
+                    <hr class="my-12">
+                    <p>check job titles and city list before web scraping</p>
+                    <div class="col-md-4">
+                        <a class="btn btn-success btn-lg" href="#" role="button">...GO..!</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="col-md-12">
+                    <div class="alert alert-success" aligned="center">
+                        [userListCities]
+                    </div>
+
+                    <ul class="list-group">
+                        {% for job in jobDisplayList %}
+                        <li class="list-group-item list-group-item-light">
+                            <div class="alert alert-secondary" role="alert">
+                                <h4 aligned="center" style="color: white">
+                                    {{ job}}
+                                </h4>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="col-md-12">
+                    <div class="alert alert-success" aligned="center">
+                        [userListJobs]
+                    </div>
+
+                    <ul class="list-group">
+                        {% for city in cityDisplayList %}
+                        <li class="list-group-item list-group-item-light">
+                            <div class="alert alert-primary" role="alert">
+                                <h4 aligned="center">{{ city}}</h4>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div><br>
+
 
     <!--------------- 2 MOD CONTAINER------------ -->
     <div class="container">
@@ -181,64 +235,26 @@
         </div>
     </div><br>
     <!-- ------------END OF MOD CONTAINER ------->
-
-    <!-- main container with jumbotron and selection lists -->
+    <!--------------- 0 LOGO W/O WELCOME ---------- -->
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
-                <div class="jumbotron" style="background-color: #bb7dee">
-                    <h1 class="display-4">Scraper</h1>
-                    <hr class="my-12">
-                    <p>check job titles and city list before web scraping</p>
-                    <div class="col-md-4">
-                        <a class="btn btn-success btn-lg" href="#" role="button">...GO..!</a>
-                    </div>
+            <div class="col-12">
+
+                <div class="container">
+                    <span class="border">
+                <div class="d-flex justify-content-center" style="background-color: #bb7dee">
+                  <img src="https://raw.githubusercontent.com/attila5287/DU_Coding_PR02_JobVizzy_flask_python_MongoDB_JavaScript_Plotly_BeautifulSoup/master/assets/img/jobVizzyLogoFinal_SmallSimple.png">
                 </div>
             </div>
-
-            <div class="col-md-4">
-                <div class="col-md-12">
-                    <div class="alert alert-success" aligned="center">
-                        [userListCities]
-                    </div>
-
-                    <ul class="list-group">
-
-                        <li class="list-group-item list-group-item-light">
-                            <h4 aligned="center">Denver</h4>
-                        </li>
-                        <li class="list-group-item list-group-item-light">
-                            <h4 aligned="center">Austin</h4>
-                        </li>
-                        <li class="list-group-item list-group-it em-light">
-                            <h4 aligned="center">Orlando</h4>
-                        </li>
-                    </ul>
+            </span>
                 </div>
+                <!-- LOGO END -->
             </div>
 
-            <div class="col-md-4">
-                <div class="col-md-12">
-                    <div class="alert alert-success" aligned="center">
-                        [userListJobs]
-                    </div>
-
-                    <ul class="list-group">
-
-                        <li class="list-group-item list-group-item-light">
-                            <h4 aligned="center">developer</h4>
-                        </li>
-                        <li class="list-group-item list-group-item-light">
-                            <h4 aligned="center">data analyst</h4>
-                        </li>
-                        <li class="list-group-item list-group-item-light">
-                            <h4 aligned="center">full stack</h4>
-                        </li>
-                    </ul>
-                </div>
-            </div>
         </div>
-    </div>
+    </div><br>
+    <!-- ---------------END OF WELCOME MSG LOGO---- -->
+
     <!-- BOTTOM_JQ_POPPER_JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
